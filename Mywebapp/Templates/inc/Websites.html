@@ -1,0 +1,47 @@
+{% load static %}
+<div class="Vidios" style="margin-top:100px;flex-wrap: wrap;">
+    <a href="#"><img class="P25" style="margin-left:350px;margin-top: 250px;width: 400px;height: 300px;position: absolute;border-radius: 10px;box-shadow:0px" src="{% static 'Images/P4.png' %}"/></a>
+    <a href="#"><img class="P25" style="margin-left:900px;margin-top: 250px;width: 400px;height: 300px;position: absolute;border-radius: 10px; box-shadow:0px;" src="{% static 'Images/P2.png' %}"/></a>
+    <a href="#"><img class="P25" style="margin-left:350px;margin-top: 650px;width: 400px;height: 300px;position: absolute;border-radius: 10px;box-shadow: 0px;" src="{% static 'Images/P3.png' %}"/></a>
+    <a href="#"><img class="P25" style="margin-left:900px;margin-top: 650px;width: 400px;height: 300px;position: absolute;border-radius: 10px;box-shadow: 0px;;" src="{% static 'Images/P6.png' %}"/></a>
+    <a class="F" href="#" style="margin-top: 1050px;position: absolute;margin-left: 750px;border: ridge;padding: 10px;text-decoration: none;border-radius: 5px;font-size: 23px;border-color: Cyan;color: aqua;border-width: 1px;font-family: Seasoned;"><i class="fa-solid fa-eye" style="color: Orange;"></i> Views More</a>
+</div>
+<style>
+.P25:hover {
+    box-shadow: 20px 20px rgb(5, 255, 255); /* Adjusted box shadow color */
+    transform: translate(-10px, -10px) scale(1.1); /* Move image up and to the left on hover, and scale */
+    transition: all 0.5s ease; /* Smooth transition for both box shadow and transform */
+    animation: Flip 1s infinite ease-in-out;
+}
+
+.F:hover {
+    box-shadow: 4px 4px Cyan;
+    transition: 0.5s ease;
+    transform: scale(1.1);
+    background: linear-gradient(to right, #350c0f, #000000, #0f3a22);
+}
+
+@keyframes Flip {
+    0% {
+        transform: rotate(0deg); /* Start position */
+    }
+    50% {
+        transform: rotate(15deg); /* Middle position - rotate image slightly */
+    }
+    100% {
+        transform: rotate(0deg); /* End position - return to start */
+    }
+}
+@media screen and (max-width: 991px) {
+    .Vidios {
+        width: 100px;
+        height: 100px;
+        margin-left: 10px; /* Adjust margin for smaller screens */
+        margin-top: 10px; /* Adjust margin for smaller screens */
+    }
+    .F {
+        margin-left: 50%;
+        transform: translateX(-50%); /* Center align the button */
+    }
+}
+</style>

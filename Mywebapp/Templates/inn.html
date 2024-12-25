@@ -1,0 +1,2400 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="{% static 'css/About.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>    
+
+    <title>
+        {% block title %}
+        STECH
+        {% endblock title %}
+    </title>
+</head>
+<body>
+    <body>
+    <nav class="navbar shadow" id="navbar">
+        <div class="logo">
+            <a href="http://127.0.0.1:1000/home/" style="text-decoration: none; color: aliceblue;">
+                Code<span style="color:Green; font-weight:bold;">Station</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="http://127.0.0.1:1000/home/">Home</a></li>
+            <li><a href="http://127.0.0.1:1000/Service/">Services</a></li>
+            <li><a href="http://127.0.0.1:1000/About/">About</a></li>
+            <li><a href="http://127.0.0.1:1000/contact/">Contact</a></li>
+            <li><a href="http://127.0.0.1:1000/Login1/">Login</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+
+        window.onscroll = function() {
+            toggleStickyNavbar();
+        };
+
+        function toggleStickyNavbar() {
+            const navbar = document.getElementById("navbar");
+            const sticky = navbar.offsetTop;
+
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Explora&family=Lora:ital,wght@0,400..700;1,400..700&family=Satisfy&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lora", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    height: 99.9px;
+    z-index: 1000;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    margin-top: 10px;
+    font-family: "Satisfy", serif;
+    margin-left: 100px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    transition: all 0.5s ease;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.nav-links li {
+    margin: 0 2rem;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+    font-family: "Lora";
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: Green;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 868px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        animation: slideDown 0.5s forwards;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .burger {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+        margin-left: 10px;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    .burger div {
+        width: 20px;
+        height: 2px;
+    }
+}
+
+/* Animation */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    
+    </style>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="Banner2 shadow">
+    <img src="{% static 'Images/lokesh.png' %}">    
+    <h2>About <span style="color: darkgreen;">Us</span></h2>
+    <p> your premier web development partner. We specialize in creating custom, innovative,<br> and user-friendly websites that bring your digital vision to life.<br> Our expert team is dedicated to excellence and creativity, ensuring your<br> online presence stands out. Let's build something extraordinary together.</p>    
+</div>
+<style>
+.Banner2 {
+    width: 2100px;
+    height: 700px;
+    background: linear-gradient(to bottom, rgba(207, 178, 9, 0.3), rgb(9, 182, 159));
+
+}
+
+.Banner2 img {
+    width: 400px;
+    height: 500px;
+    margin-top: 200px;
+    margin-left: 200px;
+    user-select: none;
+}
+
+.Banner2 h2 {
+    margin-top: -400px;
+    margin-left: 900px;
+    font-size: 100px;
+    color: #fff;
+    font-family: "Satisfy";
+}
+
+.Banner2 h2::before {
+    content: '';
+    left: 0;
+    bottom: -1px;
+    background-color: #52c027;
+    height: 10px;
+    width: 500px;
+}
+
+.Banner2 p {
+    margin-top: 0px;
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+    margin-left: 100px;
+    font-family:"Satisfy";
+}
+
+/* Responsive Styles */
+@media (max-width: 1400px) {
+    .Banner2 {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .Banner2 img {
+        width: 250px;
+        height: 350px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    .Banner2 h2 {
+        margin-top: 20px;
+        margin-left: 0;
+        font-size: 50px;
+    }
+
+    .Banner2 h2::before {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .Banner2 p {
+        margin: 20px auto;
+        font-size: 16px;
+        position: relative;
+    }
+}
+
+@media (max-width: 1200px) {
+    .Banner2 {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .Banner2 img {
+        width: 250px;
+        height: 350px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    .Banner2 h2 {
+        margin-top: 20px;
+        margin-left: 0;
+        font-size: 50px;
+        position: relative;
+    }
+
+    .Banner2 h2::before {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .Banner2 p {
+        margin: 20px auto;
+        font-size: 16px;
+        position: relative;
+    }
+}
+
+@media (max-width: 992px) {
+    .Banner2 {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .Banner2 img {
+        width: 250px;
+        height: 350px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    .Banner2 h2 {
+        margin-top: 20px;
+        margin-left: 0;
+        font-size: 50px;
+        position: relative;
+    }
+
+    .Banner2 h2::before {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .Banner2 p {
+        margin: 20px auto;
+        font-size: 16px;
+        position: relative;
+    }
+}
+
+@media (max-width: 768px) {
+    .Banner2 {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .Banner2 img {
+        width: 250px;
+        height: 350px;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    .Banner2 h2 {
+        margin-top: 20px;
+        margin-left: 0;
+        font-size: 50px;
+        position: relative;
+    }
+
+    .Banner2 h2::before {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .Banner2 p {
+        margin: 20px auto;
+        font-size: 16px;
+        position: relative;
+    }
+}
+
+@media (max-width: 576px) {
+    .Banner2 img {
+        width: 200px;
+        height: 300px;
+        margin-top: 100px;
+    }
+
+    .Banner2 h2 {
+        font-size: 40px;
+    }
+
+    .Banner2 p {
+        font-size: 14px;
+    }
+}
+
+
+::selection{
+background: #ffe15e;;
+
+}
+
+
+</style>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.Banner2 img', {
+            duration: 2000,
+            origin: 'right',
+            distance: '150px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.Banner2 h2', {
+            duration: 3000,
+            origin: 'top',
+            distance: '50px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.Banner2 p', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+           });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="WebDev">
+    <div class="imgWrapper ">
+        <img src="{% static 'Images/WD.gif' %}">
+    </div>
+
+    <div class="contentWrapper">
+        <div class="content">
+            <h2>Our Company</h2>
+            <p>Codestation is a dynamic and innovative company specializing in full-stack web and app development. Our expertise spans across Python and JavaScript, enabling us to deliver robust and scalable solutions tailored to meet diverse business needs. At Codestation, we are dedicated to turning ideas into reality with seamless, high-quality applications that enhance user experience and drive success. Whether you're looking for a responsive web platform or a cutting-edge mobile app, our team of skilled developers is committed to excellence and innovation in every project.</p>
+            <a href="http://127.0.0.1:1000/Contact/#">Contact Now</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.WebDev {
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    overflow-x: hidden;
+    padding: 5rem 0;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+.imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper img {
+    width:500px;
+    height: 500px;
+    transition: transform 0.3s;
+    user-select: none;
+    
+}
+
+
+.contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.textWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.textWrapper span:first-child {
+    display: inline-block;
+    background: #383f47;
+    width: 70px;
+    height: 5px;
+    
+}
+
+.content {
+    display: block;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Satisfy;
+    text-align: center;
+}
+
+.content p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+.content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:transparent;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 200px;
+    text-align: center;
+    border-radius: 100px;
+    border: ridge;
+    border-color: red;
+    border-width: 1px;
+    margin-left: 130px;
+}
+
+.content a:hover {
+    background-color:green;
+    transform: scale(1.10);
+    transition: 0.7s ease;
+}
+
+@media (max-width: 1058px) {
+    .WebDev {
+        grid-template-columns: 1fr;
+    }
+    .contentWrapper {
+        order: 2;
+        padding-left: 0;
+        text-align: center;
+    }
+    .imgWrapper {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .imgWrapper img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgWrapper img {
+        max-width: 300px;
+    }
+    .content {
+        font-size: 16px;
+    }
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgWrapper img {
+        max-width: 250px;
+    }
+    .content h2 {
+        font-size: 20px;
+    }
+
+    .content p {
+        font-size: 13px;
+        
+    }
+
+    
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 5px 0;
+    }
+}
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.imgWrapper img', {
+            duration: 2000,
+            origin: 'right',
+            distance: '150px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content h2', {
+            duration: 3000,
+            origin: 'top',
+            distance: '50px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content p', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+        ScrollReveal().reveal('.content ', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="skillset">
+    <div class="Title">
+        <h1>Our Skills</h1>
+    </div>   
+    
+    <div class="skill">
+        <div class="skill-name">HTML</div>
+        <div class="skill-Bar">
+            <div class="skill-per" per="92%" style="max-width:90%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="skill-name">CSS</div>
+        <div class="skill-Bar">
+            <div class="skill-per" per="85%" style="max-width: 85%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="skill-name">Python</div>
+        <div class="skill-Bar">
+            <div class="skill-per" per="90%" style="max-width: 90%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="skill-name">JS</div>
+        <div class="skill-Bar">
+            <div class="skill-per" per="60%" style="max-width: 60%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="skill-name">Data Visualization</div>
+        <div class="skill-Bar">
+            <div class="skill-per" per="80%" style="max-width: 80%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="skill-name">React</div>
+        <div class="skill-Bar">
+            <div class="skill-per" per="40%" style="max-width: 40%;"></div>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="skill-name">MySQL</div>
+        <div class="skill-Bar">
+            <div class="skill-per" per="75%" style="max-width: 75%;"></div>
+        </div>
+    </div>
+</div>
+<div class="svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 119)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+</div>
+<style>
+.skillset {
+    width: 2100px;
+    max-width: 2112px;
+    background: rgb(5, 175, 119);
+    margin: 10px auto;
+    padding: 10px 10px;
+    color: black;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px black;
+    margin-top: 210px;
+}   
+
+.Title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.skill-name {
+    font-size: 20px;
+    color:white;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0;
+}
+
+.skill-Bar {
+    height: 25px;
+    background-color: #383f47;
+    border-radius: 3px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.skill-per {
+    height: 25px;
+    background-color: brown;
+    border-radius: 3px;
+    position: relative;
+    animation: fillBars 2.5s 1;
+}
+
+.skill-per::before {
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background: orange;
+    border-radius: 4px;
+    font-size: 18px;
+    top: -35px;
+    right: 0;
+    transform: translate(50%);
+    color: #fff;
+    font-weight: 800;
+}
+
+.skill-per::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: orange;
+    top: -5px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+}
+
+.skill {
+    width: 100%;
+    max-width: 1800px;
+    margin: 20px auto; 
+}
+
+@keyframes fillBars {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1458px) {
+    .skillset {
+        padding: 30px 5%;
+    }
+    .skill-name {
+        font-size: 18px;
+    }
+    .skill-per::before {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1258px) {
+    .skillset {
+        padding: 30px 5%;
+    }
+    .skill-name {
+        font-size: 18px;
+    }
+    .skill-per::before {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 850px) {
+    .skillset {
+        padding: 30px 5%;
+    }
+    .skill-name {
+        font-size: 18px;
+    }
+    .skill-per::before {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 550px) {
+    .skillset {
+        padding: 30px 2%;
+    }
+    .Title h1 {
+        font-size: 24px;
+    }
+    .skill-name {
+        font-size: 16px;
+    }
+    .skill-per::before {
+        font-size: 14px;
+    }
+
+
+}
+
+svg{
+margin-top: -10px;
+width: 2100px;
+}
+
+</style>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.skill-name', {
+            duration: 2000,
+            origin: 'right',
+            distance: '150px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.skill-Bar', {
+            duration: 3000,
+            origin: 'top',
+            distance: '50px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content p', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+        ScrollReveal().reveal('.content ', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="WebDev45">
+    <div class="imgWrapper ">
+        <img src="{% static 'Images/comp.png' %}">
+    </div>
+
+    <div class="contentWrapper2">
+        <div class="content7">
+            <h2>Our Mission</h2>
+           <p>At Codestation, our mission is to deliver exceptional full-stack web and app development services that empower businesses to thrive in the digital era. We are dedicated to providing innovative, high-quality solutions tailored to meet the unique needs of each client. By harnessing the power of Python, JavaScript, and other cutting-edge technologies, we aim to create seamless, user-friendly applications that drive efficiency and success. Our commitment to excellence, continuous improvement, and customer satisfaction guides every project we undertake, ensuring that we not only meet but exceed expectations. Through collaboration, creativity, and a passion for technology, we strive to be the trusted partner that helps businesses transform their visions into reality.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.WebDev45 {
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    overflow-x: hidden;
+    padding: 5rem 0;
+    margin: 0 auto;
+    margin-top: -100px;
+}
+
+.imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper img {
+    width: 500px;
+    height: 500px;
+    transition: transform 0.3s;
+    user-select: none;
+}
+
+.contentWrapper2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.textWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.textWrapper span:first-child {
+    display: inline-block;
+    background: #383f47;
+    width: 70px;
+    height: 5px;
+}
+
+.content7 {
+    display: block;
+}
+
+.content7 h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Satisfy;
+    text-align: center;
+}
+
+.content7 p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+.content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 200px;
+    text-align: center;
+    border-radius: 100px;
+    border: ridge;
+    border-color: red;
+    border-width: 1px;
+    margin-left: 130px;
+}
+
+.content a:hover {
+    background-color: green;
+    transform: scale(1.10);
+    transition: 0.7s ease;
+}
+
+@media (max-width: 1058px) {
+    .WebDev45 {
+        grid-template-columns: 1fr;
+    }
+    .contentWrapper2 {
+        order: 2;
+        padding-left: 0;
+        text-align: center;
+    }
+    .imgWrapper {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .imgWrapper img {
+        max-width: 100%;
+    }
+    .content7 h2, .content7 p {
+        text-align: center;
+    }
+    .content a {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgWrapper img {
+        max-width: 300px;
+    }
+    .contentWrapper2 {
+        font-size: 16px;
+    }
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgWrapper img {
+        max-width: 200px;
+        height: 200px;
+    }
+    .content7 h2 {
+        font-size: 20px;
+    }
+    
+    .content7 p {
+        font-size: 13px;
+        padding: 10px;
+    }
+    
+    
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .WebDev45{
+        margin-top: 100px;
+
+    }
+
+
+
+}
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.imgWrapper img', {
+            duration: 2000,
+            origin: 'right',
+            distance: '150px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content7 h2', {
+            duration: 3000,
+            origin: 'top',
+            distance: '50px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content7 p', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+        ScrollReveal().reveal('.content7 ', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="WebDev3">
+    <div class="imgWrapper3">
+        <img src="{% static 'Images/Vision.png' %}">
+    </div>
+
+    <div class="contentWrapper">
+        <div class="content4">
+            <h2>Our Vision</h2>
+            <p>At Codestation, our vision is to be the leading force in the digital transformation landscape, empowering businesses through cutting-edge technology and innovative solutions. We strive to create a future where our robust and scalable web and mobile applications become the backbone of our clients' success, driving growth and enhancing user experiences. By fostering a culture of continuous learning, creativity, and excellence, we aim to push the boundaries of what's possible in full-stack development. Our commitment to quality, customer satisfaction, and technological advancement positions us as a trusted partner in navigating the ever-evolving digital world, turning ambitious ideas into impactful realities.</p>
+        </div>
+    </div>
+</div>
+
+<div class="SVG-down">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 119)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+</div>
+
+
+<style>
+.WebDev3 {
+    width: 2100px;
+    max-width: 2110px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    overflow-x: hidden;
+    padding: 5rem 0;
+    margin: 0 auto;
+    margin-top: 90px;
+    background-color: rgb(5, 175, 119);
+    margin-left: 0px;
+}
+
+.imgWrapper3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper3 img {
+    width: 500px;
+    height: 500px;
+    transition: transform 0.3s;
+    user-select: none;
+    border-radius: 250px;
+    margin-top: 50px;
+    margin-left: -150px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.textWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.textWrapper span:first-child {
+    display: inline-block;
+    background: #383f47;
+    width: 70px;
+    height: 5px;
+}
+
+.content4 {
+    display: block;
+}
+
+.content4 h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Satisfy;
+    text-align: center;
+    margin-left: -200px;
+    color: white;
+}
+
+.content4 p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 25px;
+    margin-left: -250px;
+    color: black;  
+    text-align: center;      
+    
+}
+
+.content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 200px;
+    text-align: center;
+    border-radius: 100px;
+    border: ridge;
+    border-color: red;
+    border-width: 1px;
+    margin-left: 260px;
+}
+
+.content a:hover {
+    background-color: green;
+    transform: scale(1.10);
+    transition: 0.7s ease;
+}
+
+@media (max-width: 1058px) {
+    .WebDev3 {
+        grid-template-columns: 1fr;
+    }
+    .contentWrapper {
+        order: 2;
+        padding-left: 0;
+        text-align: center;
+    }
+    .imgWrapper3 {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .imgWrapper3 img {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .content4 h2 {
+        margin-left: 0;
+    }
+    .content4 p {
+        margin-left: 0;
+    }
+    .content a {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgWrapper3 img {
+        max-width: 300px;
+    }
+    .contentWrapper {
+        font-size: 16px;
+    }
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgWrapper3 img {
+        max-width: 200px;
+        height: 200px;
+    }
+    .content4 h2 {
+        font-size: 20px;
+    }
+    
+    
+    .content4 p {
+        font-size: 13px;
+        padding: 10px;
+    }
+    
+    
+    
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.imgWrapper3 img', {
+            duration: 2000,
+            origin: 'right',
+            distance: '150px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content4 h2', {
+            duration: 3000,
+            origin: 'top',
+            distance: '50px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content4 p', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+        ScrollReveal().reveal('.content4 ', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="WebDev9">
+    <div class="imgWrapper ">
+        <img src="{% static 'Images/Anshu23.png' %}">
+    </div>
+
+    <div class="contentWrapper">
+        <div class="content89">
+            <h2>Explore and Discover Challanges entire life</h2>
+            <p>Throughout my life, I have consistently embraced the challenges that come with exploration and discovery, constantly pushing the boundaries of what is possible. As a passionate and dedicated developer at Codestation, I specialize in full-stack web and app development, leveraging my expertise in Python and JavaScript to create innovative and scalable solutions. My journey has been marked by a relentless pursuit of knowledge and excellence, driving me to transform ideas into reality through high-quality applications that enhance user experience and drive success. This dedication to overcoming challenges and continuously learning has not only shaped my professional career but has also fueled my personal growth, making me a dynamic and resilient individual committed to excellence in every project I undertake</p>
+           <a href="#">Resume</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.WebDev9 {
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    overflow-x: hidden;
+    padding: 5rem 0;
+    margin: 0 auto;
+    margin-top: -100px;
+}
+
+.imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    transition: transform 0.3s;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 50%;
+
+}
+
+.contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.content89 {
+    display: block;
+}
+
+.content89 h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Satisfy, cursive;
+    text-align: center;
+}
+
+.content89 p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+.content89 a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 200px;
+    text-align: center;
+    border-radius: 100px;
+    border: 1px ridge red;
+    margin-left: 0;
+}
+
+.content89 a:hover {
+    background-color: green;
+    transform: scale(1.10);
+    transition: 0.7s ease;
+}
+
+@media (max-width: 1058px) {
+    .WebDev9 {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .contentWrapper {
+        padding-left: 0;
+    }
+    .imgWrapper {
+        margin-bottom: 20px;
+    }
+    .imgWrapper img {
+        max-width: 100%;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contentWrapper {
+        font-size: 20px;
+    }
+    .content89 a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgWrapper img {
+        max-width: 250px;
+    }
+    .content89 h2 {
+        font-size: 20px;
+    }
+    .content89 p {
+        font-size: 13px;
+    }
+    .content89 a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .WebDev9{
+        margin-top: 100px;
+
+    }
+
+}
+</style>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.imgWrapper img', {
+            duration: 2000,
+            origin: 'right',
+            distance: '150px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content89 h2', {
+            duration: 3000,
+            origin: 'top',
+            distance: '50px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.content89 p', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+        ScrollReveal().reveal('.content89 ', {
+            duration: 2000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+    <div class="heading"><b>Our</b> Testimonial</div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="profile">
+                <div class="imgbox">
+                    <img src="{% static 'Images/Anshu23.png' %}" alt="Person1">
+                </div class="name">    
+                <h2>Lokesh Jain</h2>
+                <div class="topic">
+                    <p><span class="fa fa-quote-left left"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<span class="fa fa-quote-right right"></span></p>  
+               
+                </div>
+                <div class="social">
+                  <a href="#"><i class="fab fa-twitter"></i></a>  
+                  <a href="#"><i class="fab fa-instagram"></i></a>  
+                  <a href="#"><i class="fab fa-facebook"></i></a>  
+                  <a href="#"><i class="fab fa-telegram"></i></a>  
+                    
+                </div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="profile">
+                <div class="imgbox">
+                    <img src="{% static 'Images/Anshu23.png' %}" alt="Person1">
+                </div class="name">    
+                <h2>Rohit Jain</h2>
+                <div class="topic">
+                  <p><span class="fa fa-quote-left left"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<span class="fa fa-quote-right right"></span></p>  
+                </div>
+                <div class="social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>  
+                    <a href="#"><i class="fab fa-instagram"></i></a>  
+                    <a href="#"><i class="fab fa-facebook"></i></a>  
+                    <a href="#"><i class="fab fa-telegram"></i></a>  
+                      
+                  </div>
+  
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="profile">
+                <div class="imgbox">
+                    <img src="{% static 'Images/Anshu23.png' %}" alt="Person1">
+                </div class="name">    
+                <h2>Akriti Jain</h2>
+                <div class="topic">
+                    <p><span class="fa fa-quote-left left"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<span class="fa fa-quote-right right"></span></p>  
+               
+                </div>
+                <div class="social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>  
+                    <a href="#"><i class="fab fa-instagram"></i></a>  
+                    <a href="#"><i class="fab fa-facebook"></i></a>  
+                    <a href="#"><i class="fab fa-telegram"></i></a>  
+                      
+                  </div>
+  
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="profile">
+                <div class="imgbox">
+                    <img src="{% static 'Images/Anshu23.png' %}" alt="Person1">
+                </div class="name">    
+                <h2>Roohi Sen</h2>
+                <div class="topic">
+                    <p><span class="fa fa-quote-left left"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam<span class="fa fa-quote-right right"></span></p>  
+               
+                </div>
+                <div class="social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>  
+                    <a href="#"><i class="fab fa-instagram"></i></a>  
+                    <a href="#"><i class="fab fa-facebook"></i></a>  
+                    <a href="#"><i class="fab fa-telegram"></i></a>  
+                      
+                  </div>
+  
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+section {
+    position: relative;
+    min-height: 100vh;
+    width: 2100px;
+    background-color: rgb(5, 175, 119);
+    overflow: hidden;
+    padding: 20px;
+    margin-top: 200px;
+}
+
+section .heading {
+    display: inline-block;
+    position: relative;
+    color: #383f47;
+    font-size: 4vw;
+    padding: 60px 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-family: Satisfy;
+    
+}
+
+section .heading b {
+    color: #fff;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container {
+    position: relative;
+    width: 45%;
+    max-width: 350px;
+    color: #fff;
+    background:orange;
+    margin: 20px 10px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.profile {
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.imgbox img {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border: 8px solid green;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: float 3s ease-in-out infinite;
+
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.name h2 {
+    padding: 5px 0;
+    text-transform: capitalize;
+    color: black;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.topic p {
+    margin-top: 50px;
+    color:white;
+    padding: 0 8px;
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.left {
+    font-size: 30px;
+    display: block;
+    text-align: left;
+    color: #3b7c73;
+}
+
+.right {
+    font-size: 30px;
+    display: block;
+    text-align: right;
+    color: #3b7c73;
+}
+
+.social {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social i {
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    margin: 0 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.social i:hover {
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    margin: 0 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    section .heading {
+        font-size: 6vw;
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+
+    .topic {
+        font-size: 1vw;
+        margin-top: -60px;
+        width:200px;
+        height: 200px;
+        margin-left: 30px;
+    }
+
+    .social a {
+        font-size: 1rem;
+        padding: 6px;
+    }
+}
+.container{
+    width: 300px;
+    height: 400px;
+}
+
+</style>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.profile', {
+            duration: 2000,
+            origin: 'right',
+            distance: '150px',
+            delay: 300
+        });
+
+        
+
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="Footer-Svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 119)" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,170.7C672,213,768,267,864,256C960,245,1056,171,1152,154.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+
+</div>
+
+
+
+
+<footer>
+    <div class="footer-col about">
+        <h4>About us</h4>
+        <p style="color: white;font-size: 20px;">I am a skilled web developer specializing in Python full stack development. With expertise in both front-end and back-end technologies, I create responsive, high-quality web applications tailored to client needs. Let’s collaborate to build exceptional digital solutions together.</p>
+    </div>
+    <div class="footer-col services">
+        <h4 style="margin-left: 120px;">Services</h4>
+        <ul style="margin-left: 120px;">
+            <li><a href="http://127.0.0.1:1000/webd/">Web Devloper</a></li>
+            <li><a href="http://127.0.0.1:1000/App/">Application</a></li>
+            <li><a href="http://127.0.0.1:1000/Ecom/">Ecommerce</a></li>
+            <li><a href="http://127.0.0.1:1000/Hosting/">Hosting & Domain</a></li>
+            <li><a href="http://127.0.0.1:1000/Digital/">Digital Marketing</a></li>
+            <li><a href="http://127.0.0.1:1000/Develop/">Web maintenance</a></li>
+        </ul>
+    </div>
+    <div class="footer-col company">
+        <h4 style="margin-left: 50px;">Company</h4>
+        <ul style="margin-left: 50px;">
+            <li><a href="http://127.0.0.1:1000/About/">About</a></li>
+            <li><a href="http://127.0.0.1:1000/contact/">Legal</a></li>
+            <li><a href="http://127.0.0.1:1000/contact/">Contact us</a></li>
+        </ul>
+    </div>
+    <div class="footer-col follow">
+        <h4>Follow us</h4>
+        <div class="links">
+            <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/anveshjain1635/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="line">
+        <p style="font-size: 20px;color:white;">Copyright © 2024 Codestation. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<style>
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color:rgb(5, 175, 119);
+    padding: 40px 5%;
+    color: black;
+    margin-top:00px;
+    width: 2100px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 23px;
+    color: rgb(156, 47, 14);
+    text-transform: capitalize;
+    position: relative;
+
+
+}
+
+.footer-col p{
+color: white;
+
+}
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background-color:green;
+    height: 2px;
+    width: 90px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+ul li a {
+    display: block;
+    font-size: 23px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    font-family: "Lora";
+}
+
+ul li a:hover {
+    color: green;
+    padding-left: 2px;
+}
+
+.links a {
+    display: inline-block;
+    height: 50px;
+    width: 45px;
+    color: black;
+    background-color: rgba(40, 130, 214, 0.8);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.links a:hover {
+    color: white;
+    background-color: green;
+}
+
+.line {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+
+
+
+@media (max-width: 740px) {
+    .footer-col {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-col h4::before {
+        display: none;
+    }
+}
+
+@media (max-width: 555px) {
+    footer {
+        padding: 20px 2%;
+    }
+
+    .footer-col h4 {
+        font-size: 20px;
+        margin-left: -30px;
+    }
+    .footer-col p{
+       font-size: 10px; 
+       margin-left: 20px;     
+    }
+
+    ul li a {
+        font-size: 15px;
+    }
+
+    .line {
+        font-size: 12px;
+    
+    }
+}
+
+
+
+</style>
+
+
+</body>
+</html>

@@ -606,14 +606,14 @@ color: black;
         <div class="box">
             <img src="{% static 'Images/Webm.png' %}">
             <h3>Web maintenance</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+            <p>Web maintenance involves regular updates, monitoring, and troubleshooting of a website to ensure its functionality . </p>
             <a href="http://127.0.0.1:2000/Develop/" class="btn">read more</a>
         </div>
 
         <div class="box">
             <img src="{% static 'Images/Eco.png' %}">
             <h3>Ecommerce</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+            <p>E-commerce refers to buying and selling goods or services online. It involves various activities, including online transactions. </p>
             <a href="http://127.0.0.1:2000/Ecom/" class="btn">read more</a>
         </div>
 
@@ -623,7 +623,7 @@ color: black;
             <img src="{% static 'Images/AI3.png' %}">
 
             <h3>AI Tools</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+            <p>AI tools are software applications powered by artificial intelligence, designed to automate tasks.    </p>
             <a href="http://127.0.0.1:2000/Digital/" class="btn">read more</a>
         </div>
 
@@ -1477,6 +1477,48 @@ color: black;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="WebDev">
     <div class="imgWrapper ">
         <img src="{% static 'Images/Hosting.gif' %}">
@@ -2052,6 +2094,188 @@ color: black;
 
 
 
+<div class="WebDev3">
+    <div class="imgWrapper3">
+        <a href="#"><img src="{% static 'Images/AI3.png' %}"></a>
+    </div>
+
+    <div class="contentWrapper">
+        <div class="content4">
+            <h2>AI Tools</h2>
+            <p>AI tools are software applications powered by artificial intelligence, designed to automate tasks, enhance decision-making, and improve efficiency. These tools use machine learning, natural language processing, and data analysis to perform functions like data processing, chatbots, predictive analytics, and image recognition, offering solutions across various industries.</p>
+        </div>
+    </div>
+</div>
+
+<div class="SVG-down">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 119)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+</div>
+
+
+<style>
+.WebDev3 {
+    width: 100%;
+    max-width: 2110px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    overflow-x: hidden;
+    padding: 5rem 0;
+    margin: 0 auto;
+    margin-top: 90px;
+    background-color: rgb(5, 175, 119);
+    margin-left: 0px;
+}
+
+.imgWrapper3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper3 img {
+    width: 500px;
+    height: 500px;
+    transition: transform 0.3s;
+    user-select: none;
+    margin-top: 50px;
+    margin-left: -150px;
+    
+
+}
+
+.contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.textWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.textWrapper span:first-child {
+    display: inline-block;
+    background: #383f47;
+    width: 70px;
+    height: 5px;
+}
+
+.content4 {
+    display: block;
+}
+
+.content4 h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Satisfy;
+    text-align: center;
+    margin-left: -200px;
+    color: white;
+}
+
+.content4 p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 25px;
+    margin-left: -300px;
+    color:white;        
+}
+
+.content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #000;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 200px;
+    text-align: center;
+    border-radius: 100px;
+    border: ridge;
+    border-color: red;
+    border-width: 1px;
+    margin-left: 260px;
+}
+
+.content a:hover {
+    background-color: green;
+    transform: scale(1.10);
+    transition: 0.7s ease;
+}
+
+@media (max-width: 1058px) {
+    .WebDev3 {
+        grid-template-columns: 1fr;
+    }
+    .contentWrapper {
+        order: 2;
+        padding-left: 0;
+        text-align: center;
+    }
+    .imgWrapper3 {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .imgWrapper3 img {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    .content4 h2 {
+        margin-left: 0;
+    }
+    .content4 p {
+        margin-left: 0;
+    }
+    .content a {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgWrapper3 img {
+        max-width: 300px;
+    }
+    .contentWrapper {
+        font-size: 16px;
+    }
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgWrapper3 img {
+        max-width: 250px;
+    }
+    .content4 h2 {
+        font-size: 28px;
+    }
+    .content4 p{
+        font-size: 15px;
+
+    }
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+</style>
 
 
 
@@ -2060,6 +2284,289 @@ color: black;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="WebDev">
+    <div class="imgWrapper ">
+        <img src="{% static 'Images/SOOP.gif' %}">
+    </div>
+
+    <div class="contentWrapper">
+        <div class="content">
+            <h2>Social Media</h2>
+            <p>Social media began as simple platforms for personal expression and connection. Early platforms like Friendster (2002) and MySpace (2003) allowed users to create profiles, post content, and connect with friends. However, the launch of Facebook in 2004 marked a turning point, with more sophisticated features like photo sharing, status updates, and event planning. This was followed by the rise of Twitter (2006), which introduced microblogging, and later, Instagram (2010), which emphasized visual content. As mobile phones became more advanced, social media grew more accessible, leading to an explosion of users and content.</p>
+            <a href="http://127.0.0.1:2000/Develop/#">Read More</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.WebDev {
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    overflow-x: hidden;
+    padding: 5rem 0;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+.imgWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper img {
+    width:500px;
+    height: 500px;
+    transition: transform 0.3s;
+    user-select: none;
+    
+}
+
+
+.contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.textWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.textWrapper span:first-child {
+    display: inline-block;
+    background: #383f47;
+    width: 70px;
+    height: 5px;
+    
+}
+
+.content {
+    display: block;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: Satisfy;
+    text-align: center;
+}
+
+.content p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+.content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:transparent;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 200px;
+    text-align: center;
+    border-radius: 100px;
+    border: ridge;
+    border-color: black;
+    border-width: 1px;
+    margin-left: 130px;
+    color: black;
+}
+
+.content a:hover {
+    background-color:green;
+    transform: scale(1.10);
+    transition: 0.7s ease;
+    color: #fff;
+}
+
+@media (max-width: 1058px) {
+    .WebDev {
+        grid-template-columns: 1fr;
+    }
+    .contentWrapper {
+        order: 2;
+        padding-left: 0;
+        text-align: center;
+    }
+    .imgWrapper {
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .imgWrapper img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .imgWrapper img {
+        max-width: 300px;
+    }
+    .content {
+        font-size: 16px;
+    }
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgWrapper img {
+        max-width: 250px;
+    }
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .content p {
+        font-size: 15px;
+    }
+
+    .content a {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px 0;
+    }
+}
+</style>
 
 
 

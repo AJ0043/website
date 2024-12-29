@@ -12,10 +12,12 @@ urlpatterns = [
     path('Develop/',views.Develop, name="Maintenance"),
     path('SEO/',views.SEO, name="SEO"),
     path('Domain/',views.Hosting, name="Domain"),
-    
+    path('Learn/',views.Learning, name="Learning"),
+    path('program/',views.Program, name="Program"),
      
     
     path('Test/',views.Test, name="Testimonial"),
+    path('blog/',views.Blog, name="Blog"),
     path('About/',views.About, name="Abouts"),
     path('Login1/', views.Login, name="Login"),
     path('Ragister/',views.Ragister, name="Ragister"),

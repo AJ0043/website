@@ -64,8 +64,23 @@ def Hosting(request):
 
 
 
+@login_required(login_url='Login')
+def Learning(request):
+    return render(request,"Learn.html")
+
+
+@login_required(login_url='Login')
+def Program(request):
+    return render(request,"Program.html")
+
+
+
 def About(request):
     return render(request,"About.html")
+
+
+def Blog(request):
+    return render(request,"Blog.html")
 
 
 

@@ -380,16 +380,7 @@ html {
                     <a href="http://127.0.0.1:2000/Develop/">Click Here</a>
                 </div>
             </div>    
-                 
-            <div class="card">
-                <img src="{% static 'Images/Gra.jpeg' %}">
-                <div class="info">
-                    <h1>Graphic designing</h1>
-                    <p>Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, </p>
-                    <a href="#">Click Here</a>
-                </div>
-            </div>    
-            
+
           
             
             <div class="card">
@@ -435,7 +426,7 @@ html {
             
           
             <div class="banner">
-                <span class="on">BLOG</span>
+                <span class="on">BLOGING</span>
                 <img src="{% static 'Images/bb.jpg' %}">
                 <div class="ben">
                     <h1>Our Blog</h1>
@@ -443,7 +434,12 @@ html {
                     <a href="#">Click Here</a>
                 </div>
             </div>
-    </div>
+   
+            
+   
+   
+   
+        </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -693,17 +689,51 @@ html {
     
 </style>
 
+<style>
+    .contact-button img {
+        border-radius:200px
+        cursur:pointer;
 
+    }
 
+</style>    
+<style>
 
-
-
-
-
-
-</div>
-
+    .Contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
     
+    .contact-button {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 10px;
+        background-color: #ff5722; /* Button background color */
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .contact-button img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px; /* Rounded corners for the image */
+        display: block; /* Remove space below the image */
+    }
+    
+    .contact-button:hover {
+        transform: scale(1.05); /* Slightly enlarge the button */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        background-color: #ff7043; /* Lighter color on hover */
+    }
+    
+
+
+
+</style>    
 
 
 

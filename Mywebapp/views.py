@@ -49,8 +49,31 @@ def Develop(request):
 def Test(request):
     return render(request,"Test.html")
 
+
+
+@login_required(login_url='Login')
+def SEO(request):
+    return render(request,"SEO.html")
+
+
+
+@login_required(login_url='Login')
+def Hosting(request):
+    return render(request,"Domain.html")
+
+
+
+
 def About(request):
     return render(request,"About.html")
+
+
+
+
+
+
+
+
 
 @login_required(login_url='Login')
 @csrf_exempt    

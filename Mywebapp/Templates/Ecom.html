@@ -1236,6 +1236,33 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <footer>
         <div class="footer-col about">
             <h4>About us</h4>
@@ -1245,7 +1272,7 @@
             <h4 style="margin-left: 120px;">Services</h4>
             <ul style="margin-left: 120px;">
                 <li><a href="http://127.0.0.1:2000/webd/">Web Devloper</a></li>
-                <li><a href="http://127.0.0.1:2000/App/">Application</a></li>
+                <li><a href="http://127.0.0.1:2.5em000/App/">Application</a></li>
                 <li><a href="http://127.0.0.1:2000/Ecom/">Ecommerce</a></li>
                 <li><a href="http://127.0.0.1:2000/Hosting/">Hosting & Domain</a></li>
                 <li><a href="http://127.0.0.1:2000/Digital/">Digital Marketing</a></li>
@@ -1258,6 +1285,10 @@
                 <li><a href="http://127.0.0.1:2000/About/">About</a></li>
                 <li><a href="http://127.0.0.1:2000/contact/">Legal</a></li>
                 <li><a href="http://127.0.0.1:2000/contact/">Contact us</a></li>
+                <li><a href="http://127.0.0.1:2000/program/">Tutorial</a></li>
+                <li><a href="http://127.0.0.1:2000/Learn/">Programing </a></li>
+           
+           
             </ul>
         </div>
         <div class="footer-col follow">
@@ -1406,8 +1437,34 @@
     </style>
     
     
-            
     
+    
+    <script>
+        // Set Alertify notifier position
+        alertify.set('notifier', 'position', 'top-right');
+    
+        // Loop through messages and display them using Alertify
+        {% for msg in messages %}
+            alertify.success('{{ msg }}');
+        {% endfor %}
+    </script>
+    
+    <style>
+        /* Style for Alertify notifications */
+        .ajs-message.ajs-success {
+        border-radius: 50px; /* Add border-radius */
+        /* Add border */
+        background-color: red; /* Change background color to red */
+        color: black; /* Change text color to white */
+        padding: 10px; /* Add padding */
+        margin-bottom: 10px; /* Add margin bottom */
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;    
+    
+    }
+    </style>
+    </body>
+    </html>
     
     
 

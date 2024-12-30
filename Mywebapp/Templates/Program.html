@@ -344,13 +344,13 @@ html {
     
 
     <div class="card">
-        <img src="{% static 'Images/Jp.png' %}">
+        <img style="width:160px;margin-top:10px;" src="{% static 'Images/Jp.png' %}">
         <h3>JavaScript</h3>
         <a class="btn"href="#">Start learning</a>
     </div>    
     
     <div class="card">
-        <img src="{% static 'Images/CP4.png' %}">
+        <img style="width:160px;margin-top:10px;" src="{% static 'Images/CP4.png' %}">
         <h3>C</h3>
         <a class="btn"href="#">Start learning</a>
     </div>    
@@ -360,7 +360,18 @@ html {
         <h3>Django</h3>
         <a class="btn"href="#">Start learning</a>
     </div>    
-  </div>
+ 
+    <div class="card">
+        <img style="border-radius:10px" src="{% static 'Images/T.webp' %}">
+        <h3>Python Tkinter</h3>
+        <a class="btn"href="#">Start learning</a>
+    </div>    
+
+
+
+
+
+</div>
   <style>
     /* Basic reset */
     * {
@@ -381,7 +392,7 @@ html {
     /* Individual card styling */
     .card {
         width: 20%; /* Adjust width for responsiveness */
-        background-color: Whitesmoke;
+        background-color:Whitesmoke;
         border: 1px solid #ddd;
         border-radius: 5px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -393,7 +404,7 @@ html {
     
     /* Styling for images inside the card */
     .card img {
-        width: 50%; /* Adjust image size for responsiveness */
+        width: 40%; /* Adjust image size for responsiveness */
         height: auto; /* Maintain aspect ratio */
         max-height: 180px; /* Maximum height for the image */
         object-fit: cover; /* Ensures the image fills the space without distortion */
@@ -479,209 +490,240 @@ html {
 
 
 
-    <div class="Footer-Svg">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 119)" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,170.7C672,213,768,267,864,256C960,245,1056,171,1152,154.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-    
-        <footer>
-            <div class="footer-col about">
-                <h4>About us</h4>
-                <p style="color: white;font-size: 20px;">I am a skilled web developer specializing in Python full stack development. With expertise in both front-end and back-end technologies, I create responsive, high-quality web applications tailored to client needs. Let’s collaborate to build exceptional digital solutions together.</p>
-            </div>
-            <div class="footer-col services">
-                <h4 style="margin-left: 120px;">Services</h4>
-                <ul style="margin-left: 120px;">
-                    <li><a href="http://127.0.0.1:2000/webd/">Web Devloper</a></li>
-                    <li><a href="http://127.0.0.1:2000/App/">Application</a></li>
-                    <li><a href="http://127.0.0.1:2000/Ecom/">Ecommerce</a></li>
-                    <li><a href="http://127.0.0.1:2000/Hosting/">Hosting & Domain</a></li>
-                    <li><a href="http://127.0.0.1:2.2000/Service/000/Digital/">Digital Marketing</a></li>
-                    <li><a href="http://127.0.0.1:2000/Develop/">Web maintenance</a></li>
-                </ul>
-            </div>
-            <div class="footer-col company">
-                <h4 style="margin-left: 50px;">Company</h4>
-                <ul style="margin-left: 50px;">
-                    <li><a href="http://127.0.0.1:2000/About/">About</a></li>
-                    <li><a href="http://127.0.0.1:2000/contact/">Legal</a></li>
-                    <li><a href="http://127.0.0.1:2000/contact/">Contact us</a></li>
-                </ul>
-            </div>
-            <div class="footer-col follow">
-                <h4>Follow us</h4>
-                <div class="links">
-                    <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/anveshjain1635/"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="line">
-                <p style="font-size: 20px;color:white;">Copyright © 2024 Codestation. All Rights Reserved.</p>
-            </div>
-        </footer>
-        
-        <style>
-        footer {
-            display: flex;
-            flex-wrap: wrap;
-            background-color:rgb(5, 175, 119);
-            padding: 40px 5%;
-            color: black;
-            margin-top:00px;
-        }
-        
-        .footer-col {
-            flex: 1;
-            min-width: 200px;
-            margin-bottom: 20px;
-        }
-        
-        .footer-col h4 {
-            margin-bottom: 20px;
-            font-weight: bold;
-            font-size: 23px;
-            color: rgb(156, 47, 14);
-            text-transform: capitalize;
-            position: relative;
-        
-        
-        }
-        
-        .footer-col p{
-        color: white;
-        
-        }
-        .footer-col h4::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -6px;
-            background-color:green;
-            height: 2px;
-            width: 90px;
-        }
-        
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        ul li {
-            margin-bottom: 8px;
-        }
-        
-        ul li a {
-            display: block;
-            font-size: 23px;
-            text-transform: capitalize;
-            color: white;
-            text-decoration: none;
-            transition: 0.4s;
-            font-family: "Lora";
-        }
-        
-        ul li a:hover {
-            color: Orange;
-            padding-left: 2px;
-        }
-        
-        .links a {
-            display: inline-block;
-            height: 50px;
-            width: 45px;
-            color: black;
-            background-color: rgba(40, 130, 214, 0.8);
-            margin: 0 10px 10px 0;
-            text-align: center;
-            line-height: 44px;
-            border-radius: 50%;
-            transition: 0.4s;
-        }
-        
-        .links a:hover {
-            color: white;
-            background-color: Orange;
-        }
-        
-        .line {
-            text-align: center;
-            font-size: 14px;
-            margin-top: 20px;
-        }
-        
-        
-        
-        
-        @media (max-width: 740px) {
-            .footer-col {
-                width: 100%;
-                text-align: center;
-            }
-        
-            .footer-col h4::before {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 555px) {
-            footer {
-                padding: 20px 2%;
-            }
-        
-            .footer-col h4 {
-                font-size: 20px;
-                margin-left: -30px;
-            }
-            .footer-col p{
-               font-size: 10px; 
-               margin-left: 20px;     
-            }
-        
-            ul li a {
-                font-size: 15px;
-            }
-        
-            .line {
-                font-size: 12px;
-            
-            }
-        }
-        
-        
-        
-        </style>
-        
-        
-        
-        
-        <script>
-            // Set Alertify notifier position
-            alertify.set('notifier', 'position', 'top-right');
-        
-            // Loop through messages and display them using Alertify
-            {% for msg in messages %}
-                alertify.success('{{ msg }}');
-            {% endfor %}
-        </script>
-        
-        <style>
-            /* Style for Alertify notifications */
-            .ajs-message.ajs-success {
-            border-radius: 50px; /* Add border-radius */
-            /* Add border */
-            background-color: red; /* Change background color to red */
-            color: black; /* Change text color to white */
-            padding: 10px; /* Add padding */
-            margin-bottom: 10px; /* Add margin bottom */
-            font-size: 20px;
-            font-family: 'Times New Roman', Times, serif;    
-        
-        }
-        </style>
-</body>
-</html>
+ <div class="Footer-Svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 119)" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,170.7C672,213,768,267,864,256C960,245,1056,171,1152,154.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="footer-col about">
+        <h4>About us</h4>
+        <p style="color: white;font-size: 20px;">I am a skilled web developer specializing in Python full stack development. With expertise in both front-end and back-end technologies, I create responsive, high-quality web applications tailored to client needs. Let’s collaborate to build exceptional digital solutions together.</p>
+    </div>
+    <div class="footer-col services">
+        <h4 style="margin-left: 120px;">Services</h4>
+        <ul style="margin-left: 120px;">
+            <li><a href="http://127.0.0.1:2000/webd/">Web Devloper</a></li>
+            <li><a href="http://127.0.0.1:2.5em000/App/">Application</a></li>
+            <li><a href="http://127.0.0.1:2000/Ecom/">Ecommerce</a></li>
+            <li><a href="http://127.0.0.1:2000/Hosting/">Hosting & Domain</a></li>
+            <li><a href="http://127.0.0.1:2000/Digital/">Digital Marketing</a></li>
+            <li><a href="http://127.0.0.1:2000/Develop/">Web maintenance</a></li>
+        </ul>
+    </div>
+    <div class="footer-col company">
+        <h4 style="margin-left: 50px;">Company</h4>
+        <ul style="margin-left: 50px;">
+            <li><a href="http://127.0.0.1:2000/About/">About</a></li>
+            <li><a href="http://127.0.0.1:2000/contact/">Legal</a></li>
+            <li><a href="http://127.0.0.1:2000/contact/">Contact us</a></li>
+            <li><a href="http://127.0.0.1:2000/program/">Tutorial</a></li>
+            <li><a href="http://127.0.0.1:2000/Learn/">Programing </a></li>
+       
+       
+        </ul>
+    </div>
+    <div class="footer-col follow">
+        <h4>Follow us</h4>
+        <div class="links">
+            <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/anveshjain1635/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="line">
+        <p style="font-size: 20px;color:white;">Copyright © 2024 Codestation. All Rights Reserved.</p>
+    </div>
+</footer>
 
 <style>
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    background-color:rgb(5, 175, 119);
+    padding: 40px 5%;
+    color: black;
+    margin-top:00px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 23px;
+    color: rgb(156, 47, 14);
+    text-transform: capitalize;
+    position: relative;
+
+
+}
+
+.footer-col p{
+color: white;
+
+}
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background-color:green;
+    height: 2px;
+    width: 90px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+ul li a {
+    display: block;
+    font-size: 23px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    font-family: "Lora";
+}
+
+ul li a:hover {
+    color: Orange;
+    padding-left: 2px;
+}
+
+.links a {
+    display: inline-block;
+    height: 50px;
+    width: 45px;
+    color: black;
+    background-color: rgba(40, 130, 214, 0.8);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.links a:hover {
+    color: white;
+    background-color: Orange;
+}
+
+.line {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+
+
+
+@media (max-width: 740px) {
+    .footer-col {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-col h4::before {
+        display: none;
+    }
+}
+
+@media (max-width: 555px) {
+    footer {
+        padding: 20px 2%;
+    }
+
+    .footer-col h4 {
+        font-size: 20px;
+        margin-left: -30px;
+    }
+    .footer-col p{
+       font-size: 10px; 
+       margin-left: 20px;     
+    }
+
+    ul li a {
+        font-size: 15px;
+    }
+
+    .line {
+        font-size: 12px;
     
+    }
+}
+
+
+
 </style>
+
+
+
+
+<script>
+    // Set Alertify notifier position
+    alertify.set('notifier', 'position', 'top-right');
+
+    // Loop through messages and display them using Alertify
+    {% for msg in messages %}
+        alertify.success('{{ msg }}');
+    {% endfor %}
+</script>
+
+<style>
+    /* Style for Alertify notifications */
+    .ajs-message.ajs-success {
+    border-radius: 50px; /* Add border-radius */
+    /* Add border */
+    background-color: red; /* Change background color to red */
+    color: black; /* Change text color to white */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add margin bottom */
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;    
+
+}
+</style>
+</body>
+</html> 

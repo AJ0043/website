@@ -18,22 +18,22 @@
     
 <title>
         {% block title %}
-        STECH Web development
+        STECH Web developement
         {% endblock title %}
     </title>
 </head>
 <body>
-    <nav class="navbar shadow" id="navbar" style="height: 80px; ">
-        <div class="logo" style="margin-top: -6px;"><a href="http://127.0.0.1:2000/home/" style="text-decoration: none; color: aliceblue;font-family: 'Times New Roman', Times, serif;">S-<span style="color:Green; font-weight:bold;font-family: 'Times New Roman', Times, serif;">TECH</span></a></div>
+    <nav class="navbar" id="navbar" style="height: 80px; ">
+        <div class="logo" style="margin-top: -6px;"><a href="http://127.0.0.1:2000/home/" style="text-decoration: none; color: Orange;font-family: 'Times New Roman', Times, serif;">S-<span style="color:aliceblue; font-weight:bold;font-family: 'Times New Roman', Times, serif;">TECH</span></a></div>
         <ul class="nav-links" style="padding: 0 60px;font-size: 30px;font-weight:800;">
             <li><a href="http://127.0.0.1:2000/home/">Home</a></li>
             <li><a href="http://127.0.0.1:2000/Service/">Services</a></li>
             <li><a href="http://127.0.0.1:2000/program/">Tutorial</a></li>
             <li><a href="http://127.0.0.1:2000/About/">About</a></li>
-            <li><a href="http://127.0.0.1:2000/About/">Clints</a></li>
+            <li><a href="http://127.0.0.1:2000/Login1/">Clints</a></li>
             <li><a href="http://127.0.0.1:2000/contact/">Contact</a></li>
             <li><a href="http://127.0.0.1:2000/Login1/">Login</a></li>
-            
+
         </ul>
         <div class="burger" onclick="toggleMenu()">
             <div class="line1"></div>
@@ -92,7 +92,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:Orange;
+    background-color: rgb(5, 90, 175);
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -231,8 +231,8 @@ html {
 
 @media screen and (max-width: 480px) {
     .logo {
-        font-size: 1.2rem;
-        margin-left: 30px;
+        font-size: 1rem;
+        margin-left: -30px;
     }
 
     .nav-links a {
@@ -289,6 +289,27 @@ position: absolute;
 
 
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="Banner2 shadow">
     <img src="{% static 'Images/Avatar.png' %}">    

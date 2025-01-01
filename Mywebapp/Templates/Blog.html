@@ -499,11 +499,371 @@ position: absolute;
     }
     
     
+</style>
+
+
+<div class="wrapper">
+        <div class="banner">
+            <img src="{% static 'Images/Ima.jpg' %}">
+            <div class="ben">
+               <h1>10 Essential Skills Every Aspiring Web Developer Should Learn</h1>
+                <p>Contemplating a career in web development? Learn about the technical and non-technical skills necessary for the job and ponder if you are inclined to acquire and hone these skills for a successful web development career.
+
+                </p>
+                <a href="http://127.0.0.1:2000/Learn/">Click Here</a>
+            </div>
+        </div>
+        
+        <div class="banner">
+            <img src="{% static 'Images/Ass.jpeg' %}">
+            <div class="ben">
+                <h1>The Role of WebAssembly in Web Development</h1>
+                <p>WebAssembly (Wasm) is a binary instruction format for compiling and executing code in a client-side web browser. </p>
+                <a href="http://127.0.0.1:2000/program/">Click Here</a>
+            </div>
+        </div>
+        
+      
+        <div class="banner">
+            <img src="{% static 'Images/Fram.jpg' %}">
+            <div class="ben">
+                <h1> Top 5 CSS Frameworks for Faster Web Design in 2025 </h1>
+                <p>There are many web application development companies that provide a multitude of web development solutions, each using a different framework for the project. </p>
+                <a href="http://127.0.0.1:2000/blog/">Click Here</a>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="{% static 'Images/AI99.png' %}">
+            <div class="ben">
+                <h1>How AI is Revolutionizing Web Development</h1>
+                <p>Meet AI for Web Development! Well, I can tell that artificial intelligence known as AI has generated a tremendous impact in various sectors globally. And guess what? Web development is no different. </p>
+                <a href="#">Click Here</a>
+            </div>
+        </div>
+
+        <div class="banner">
+            <img src="{% static 'Images/Well.jpg' %}">
+            <div class="ben">
+                <h1>How to Build a Portfolio That Gets You Hired as a Web Developer</h1>
+                <p>Think of your web developer portfolio as a lasting resource that a potential employer can refer to when they need someone right away. They can also share it with other decision-makers or keep it on hand for when they need someone in the future.</p>
+                <a href="#">Click Here</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        ScrollReveal().reveal('.card img', {
+            duration: 2000,
+            origin: 'left',
+            distance: '150px',
+            delay: 200
+        });
+
+        ScrollReveal().reveal('.wrapper', {
+            duration: 1000,
+            origin: 'top',
+            distance: '50px',
+            delay: 300
+        });
+
+        ScrollReveal().reveal('.contents p', {
+            duration: 1000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 400
+        });
+
+        ScrollReveal().reveal('.contents a', {
+            duration: 1000,
+            origin: 'right',
+            distance: '50px',
+            delay: 500
+        });
+
+        // New section reveal
+        ScrollReveal().reveal('.heading', {
+            duration: 1000,
+            origin: 'top',
+            distance: '50px',
+            delay: 100
+        });
+
+        ScrollReveal().reveal('.box', {
+            duration: 1000,
+            origin: 'bottom',
+            distance: '50px',
+            delay: 200,
+            interval: 200
+        });
+    });
+</script>
+
+<style>
+
+/* Wrapper for Cards */
+/* Wrapper for Cards */
+/* Wrapper for Cards */
+.wrapper {
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* Ensure 4 cards per row */
+gap: 70px; /* Space between cards */
+padding: 20px;
+justify-content: center;
+max-width: 1800px; /* Increased overall width */
+margin: 50px auto; /* Center alignment */
+}
+/* Card Styles */
+.card {
+width: 300px; /* Set a wider fixed width for cards */
+background: black;
+border: 1px solid #ddd;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+text-align: center;
+margin: auto;
+box-shadow: rgba(100, 40, 40, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.card:hover {
+transform: translateY(-20px); /* Lift on hover */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+transition: 0.5s ease;
+}
+
+.card img {
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+.card .info {
+padding: 15px;
+}
+
+.card h1 {
+font-size: 1.5em;
+margin: 10px 0;
+color: orange;
+}
+
+.card p {
+font-size: 1rem;
+color: white;
+line-height: 1.5;
+}
+
+.card a {
+display: inline-block;
+margin-top: 10px;
+padding: 10px 20px;
+background: green;
+color: white;
+text-decoration: none;
+border-radius: 5px;
+transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.card a:hover {
+background: orange;
+transform: scale(1.05); /* Slight enlarge on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+.wrapper {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row for tablets */
+}
+}
+
+@media (max-width: 768px) {
+.wrapper {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row for smaller devices */
+}
+}
+
+@media (max-width: 480px) {
+.wrapper {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobile devices */
+}
+.card h1 {
+    font-size: 1.2em;
+}
+.card p {
+    font-size: 0.9em;
+}
+.card a {
+    font-size: 0.85em;
+    padding: 8px 15px;
+}
+}
+
+</style>    
+
+
+
+<style>
+.banner {
+    position: relative;
+    width: 300px; /* Adjust the width as needed */
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    background: black;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.banner .on {
+    position: absolute;
+    top: 0;
+    background-color: #ff5722; /* Default background color */
+    color: #fff;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Position the tag on the left */
+.banner .on.left {
+    left: 0;
+    transform: translate(-5px, -5px);
+}
+
+/* Position the tag on the right */
+.banner .on.right {
+    right: 0;
+    transform: translate(5px, -5px);
+}
+
+.banner .ben {
+    padding: 15px;
+    text-align: left;
+}
+
+.banner .ben h1 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: Orange;
+    text-align:center;
+}
+
+.banner .ben p {
+    font-size: 15   px;
+    color: White;
+    line-height: 1.5;
+    text-align:center;
+}
+
+.banner .ben {
+    padding: 15px;
+    text-align: center; /* Centers the content including the button */
+}
+
+.banner .ben a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: green;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+.banner .ben a:hover{
+    background:Orange;
+
+
+}
+
+
+.banner:hover {
+    transform: scale(1.05); /* Slight enlarge on hover */
+
+}
+
+</style>
+
+<style>
+.contact-button img {
+    border-radius:200px
+    cursur:pointer;
+
+}
+
+</style>    
+<style>
+
+.Contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.contact-button {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 2px;
+    background-color:rgb(30, 228, 155); /* Button background color */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the image */
+    display: block; /* Remove space below the image */
+}
+
+.contact-button:hover {
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    background-color: #ff7043; /* Lighter color on hover */
+}
+
+
+
+
+</style>    
     
     
-    </style>
     
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -561,35 +921,6 @@ position: absolute;
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 90, 175   )" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,170.7C672,213,768,267,864,256C960,245,1056,171,1152,154.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <footer>

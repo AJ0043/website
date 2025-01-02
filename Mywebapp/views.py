@@ -86,6 +86,12 @@ def Blog(request):
 
 
 
+def Blog1(request):
+    return render(request,"blog1.html")
+
+
+def Blog2(request):
+    return render(request,"blog2.html")
 
 
 

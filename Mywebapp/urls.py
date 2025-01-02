@@ -14,8 +14,9 @@ urlpatterns = [
     path('Domain/',views.Hosting, name="Domain"),
     path('Learn/',views.Learning, name="Learning"),
     path('program/',views.Program, name="Program"),
-     
-    
+    path('blog1/', views.Blog1, name='blog1'), 
+    path('blog2/', views.Blog2, name='blog2'), 
+
     path('Test/',views.Test, name="Testimonial"),
     path('blog/',views.Blog, name="Blog"),
     path('About/',views.About, name="Abouts"),

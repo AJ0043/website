@@ -30,7 +30,7 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contactus'),
     path('SendMessage/', views.Send, name='success'),
     path('already/', views.already, name='log'),
-
+    path('project/', views.Project, name='project'),
 
 
 

@@ -74,6 +74,10 @@ def Program(request):
     return render(request,"Program.html")
 
 
+@login_required(login_url='Login')
+def Project(request):
+    return render(request,"Project.html")
+
 
 def About(request):
     return render(request,"About.html")

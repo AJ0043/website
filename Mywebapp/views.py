@@ -98,6 +98,11 @@ def Blog3(request):
     return render(request,"blog3.html")
 
 
+
+def Blog4(request):
+    return render(request,"blog4.html")
+
+
 @login_required(login_url='Login')
 @csrf_exempt    
 def contact_view(request):

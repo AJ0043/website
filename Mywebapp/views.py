@@ -94,6 +94,8 @@ def Blog2(request):
     return render(request,"blog2.html")
 
 
+def Blog3(request):
+    return render(request,"blog3.html")
 
 
 @login_required(login_url='Login')

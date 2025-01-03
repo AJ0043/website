@@ -272,156 +272,278 @@ position: absolute;
 
 
 
-<div class="Banner">
-    <div class="banr">
-        <img src="{% static 'Images/Ass.jpeg' %}" alt="Banner Image">   
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           
+        }
+
+        .table-container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 10px;
+            background: Orange  ;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-family: serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-size: 20px;
+            font-family: serif;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            font-family: serif;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .framework-image {
+            width: 40px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px;
+                font-size: 16px;
+            }
+            .framework-image {
+                width: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 6px;
+                font-size: 14px;
+            }
+            .framework-image {
+                width: 25px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            table {
+                font-size: 10px;
+            }
+            th, td {
+                font-size: 12px;
+                padding: 4px;
+            }
+            .framework-image {
+                width: 20px;
+            }
+        }
+    </style>
+<body>
+    <div class="table-container">
+        <h1>Most Popular and Best CSS Frameworks</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>What It Is</th>
+                    <th>GitHub Stars</th>
+                    <th>License</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/boot.jpeg' %}" alt="Bootstrap"></td>
+                    <td>Bootstrap</td>
+                    <td>The most popular CSS framework</td>
+                    <td>168,000</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/Tail.webp' %}" alt="TailwindCSS"></td>
+                    <td>TailwindCSS</td>
+                    <td>Open source framework</td>
+                    <td>79,000</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/Sem.png' %}" alt="Semantic UI"></td>
+                    <td>Semantic UI</td>
+                    <td>UI framework designed for theming</td>
+                    <td>51,000</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/Bul.png' %}" alt="Bulma"></td>
+                    <td>Bulma</td>
+                    <td>Minimalistic modular CSS framework</td>
+                    <td>49,000</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/mata.png' %}" alt="Materialize"></td>
+                    <td>Materialize</td>
+                    <td>CSS framework based on Material Design</td>
+                    <td>38,900</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/Found.svg' %}" alt="Foundation"></td>
+                    <td>Foundation</td>
+                    <td>Frontend framework by Zurb Foundation</td>
+                    <td>30,000</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/Pp.png' %}" alt="Pure"></td>
+                    <td>Pure</td>
+                    <td>Minimal open-source framework; by Yahoo</td>
+                    <td>23,000</td>
+                    <td>BSD</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/UI.png' %}" alt="UIKit"></td>
+                    <td>UIKit</td>
+                    <td>Lightweight open source framework for the modern web</td>
+                    <td>17,700</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/M.png' %}" alt="Material UI"></td>
+                    <td>Material UI</td>
+                    <td>Open source framework by Google</td>
+                    <td>16,500</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/Pro.jpg' %}" alt="Primer"></td>
+                    <td>Primer</td>
+                    <td>CSS design components by GitHub</td>
+                    <td>11,400</td>
+                    <td>MIT</td>
+                </tr>
+                <tr>
+                    <td><img class="framework-image" src="{% static 'Images/Pico.svg' %}" alt="Pico.CSS"></td>
+                    <td>Pico.CSS</td>
+                    <td>Minimal CSS Framework for semantic HTML</td>
+                    <td>5,800</td>
+                    <td>MIT</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <div class="heading">
-        <h1>The Role of WebAssembly in Web Development</h1>
-        <p>
-            WebAssembly (Wasm) has emerged as a transformative technology in web development, bridging the gap between high-performance applications and web browser capabilities. Introduced as a portable binary instruction format, WebAssembly enables developers to run code written in languages like C, C++, and Rust at near-native speed directly in web browsers. This capability is a game-changer for web development, as it allows the execution of complex computations, high-performance graphics, and advanced algorithms that were traditionally limited to native applications.
-        </p>
-        <p>
-            One of WebAssembly’s primary roles in web development is enhancing performance. JavaScript, while powerful and flexible, has inherent performance limitations due to its dynamic nature. WebAssembly, on the other hand, provides a low-level bytecode that is optimized for execution speed, enabling tasks such as 3D rendering, video editing, and real-time simulations to run smoothly in the browser. This performance boost is particularly valuable in applications like online gaming, CAD tools, and scientific visualization, where responsiveness and computational efficiency are critical.
-        </p>
-        <p>
-            WebAssembly’s Role in Enhancing Performance
-One of the most significant contributions of WebAssembly to web development is its ability to enhance performance. While JavaScript has been instrumental in shaping the modern web, it has inherent limitations due to its dynamic nature and interpretation overhead.
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Changes Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-WebAssembly, in contrast, is designed for efficient execution. Its low-level bytecode is optimized for speed, making it ideal for applications requiring heavy computations, such as:
+        .table-container {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 10px;
+            background: Orange;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-3D Rendering and Gaming:
+        h1 {
+            text-align: center;
+            color: #333;
+            font-family: serif;
+        }
 
-WebAssembly powers advanced graphics engines like Unity and Unreal Engine, enabling high-quality gaming experiences in the browser.
-It facilitates smooth frame rates and real-time rendering, previously achievable only with native applications.
-Video Editing and Processing:
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
 
-With Wasm, complex video editing tools can run directly in the browser, reducing dependency on native software.
-Scientific Simulations:
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            font-family: serif;
+        }
 
-Scientists and engineers can use Wasm to perform large-scale simulations and data analyses in web applications, leveraging its computational efficiency.
-Cross-Platform Compatibility and Development Efficiency
-WebAssembly’s design emphasizes universality, allowing it to function seamlessly across browsers and devices. This cross-platform compatibility offers significant benefits for developers and end-users:
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+        }
 
-Write Once, Deploy Everywhere:
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-Developers can write code in their preferred language, compile it to WebAssembly, and deploy it across different platforms without modifications.
-Consistency Across Browsers:
+        tr:hover {
+            background-color: #f1f1f1;
+        }
 
-Major browsers like Chrome, Firefox, Safari, and Edge support WebAssembly, ensuring that applications behave uniformly for all users.
-Reduced Development Time:
+        .framework-image {
+            width: 40px;
+            height: auto;
+            border-radius: 4px;
+        }
 
-By eliminating the need for platform-specific adjustments, WebAssembly streamlines the development process and accelerates time-to-market.
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
 
-        </p>
-    
-    
-    <h3 style="text-align:center;font-family:serif;font-size:30px;margin-top:50px;  ">**********</h3>
-    
-    </div>
-</div>    
-
-<style>
-.Banner img {
-    width: 50%;
-    height: auto; /* Maintain aspect ratio */
-    box-shadow: 0px 2px 5px black;
-    margin-left: auto;
-    margin-right: auto;
-    display: block; /* Center image without altering width */
-}
-
-.Banner h1 {
-    font-family: serif;
-    text-align: center;
-    margin-top: 50px;
-    border:ridge;
-    border-width:1px;
-    font-size: 2rem; /* Adjustable for scaling */
-    background:Orange;
-
-}
-
-.Banner p {
-    padding: 10px;
-    text-align: justify; /* Better readability on larger screens */
-    font-size: 1.2rem; /* Adjustable for scaling */
-    line-height: 1.6; /* Improved readability */
-    margin: 0 auto;
-    max-width: 1000px; /* Limit text width for readability */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .Banner img {
-        width: 80%; /* Adjust image size for smaller screens */
-    }
-    .Banner h1 {
-        font-size: 1.5rem;
-        margin-top: 30px;
-    }
-    .Banner p {
-        font-size: 0.9rem;
-        padding: 5px;
-    }
-}
-
-@media (max-width: 480px) {
-    .Banner img {
-        width: 90%; /* Further adjust image size for mobile */
-    }
-    .Banner h1 {
-        font-size: 1.2rem;
-        margin-top: 20px;
-    }
-    .Banner p {
-        font-size: 0.8rem;
-    }
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        @media (max-width: 480px) {
+            th, td {
+                padding: 6px;
+                font-size: 12px;
+            }
+            .framework-image {
+                width: 30px;
+            }
+        }
+    </style>
+</head>
 
 
 

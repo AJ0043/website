@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'Images/Stech.jpg' %}" type="image/x-icon">
+
     <title>
         {% block title %}
         S-TECH(Web Development)
@@ -70,7 +72,7 @@
                     <a href="https://www.instagram.com/anveshjain1635/"><i class="fab fa-instagram"></i></a>
                 </ul>
                 <div class="Submit">
-                    <a href="#"><img style="width:100px;height:100px;margin-top:-1300px;border-radius:20px;margin-left:170px;" src="{% static 'Images/Stech.jpg' %}" alt="Banner Image"></a> 
+                    <a href="http://127.0.0.1:2000/home/"><img style="width:100px;height:100px;margin-top:-1300px;border-radius:20px;margin-left:170px;" src="{% static 'Images/Stech.jpg' %}" alt="Banner Image"></a> 
                     <h4 class="Third-text">Login Now</h4>
                     <form method="POST">
                         {% csrf_token %}

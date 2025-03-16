@@ -15,28 +15,28 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>    
-    <link rel="icon" href="{% static 'Images/Stech.jpg' %}" type="image/x-icon">
-    
+    <link rel="icon" href="{% static 'Images/stec.png' %}" type="image/x-icon">
+
 <title>
         {% block title %}
-        STECH Web developement
+        STECH Web development
         {% endblock title %}
-    </title>    
+    </title>
 </head>
 <body>
-    <nav class="navbar" id="navbar" style="height: 80px; ">
-        <a href="http://127.0.0.1:2000/home/"><div class="logo" style="margin-top: -6px;"><img style="width:100px;height:60px;margin-top:-2px;border-radius:20px;" src="{% static 'Images/Stech.jpg' %}" alt="Banner Image">
+    <a href="http://127.0.0.1:2000/home/"><nav class="navbar" id="navbar" style="height: 80px; ">
+        <div class="logo" style="margin-top: -6px;"><img style="width:80px;height:60px;margin-top:-2px;border-radius:10px;" src="{% static 'Images/stec.png' %}" alt="Banner Image">
         </a></div>
-        
-        <ul class="nav-links" style="padding: 0 60px;font-size: 30px;font-weight:800;">
+            <ul class="nav-links" style="padding: 0 60px;font-size: 30px;font-weight:800;">
             <li><a href="http://127.0.0.1:2000/home/">Home</a></li>
             <li><a href="http://127.0.0.1:2000/Service/">Services</a></li>
             <li><a href="http://127.0.0.1:2000/program/">Tutorial</a></li>
             <li><a href="http://127.0.0.1:2000/About/">About</a></li>
-            <li><a href="http://127.0.0.1:2000/blog/">Blog</a></li>
+            <li><a href="http://127.0.0.1:2000/blog/">blog</a></li>
             <li><a href="http://127.0.0.1:2000/contact/">Contact</a></li>
             <li><a href="http://127.0.0.1:2000/Login1/" style="color:Orange;font-size:1.6rem;">LOGIN</a></li>
 
+            
         </ul>
         <div class="burger" onclick="toggleMenu()">
             <div class="line1"></div>
@@ -95,7 +95,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgb(5,90,175);
+    background-color:rgb(6 , 175 ,161);
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -114,10 +114,10 @@ html {
     font-size: 2rem;
     margin-top: 10px;
     font-family: serif;
-    border-radius:20px;
-    padding:3px;
-    margin-left: 100px;
+    border-radius:8px;
+    
 }
+
 
 .nav-links {
     list-style: none;
@@ -138,7 +138,7 @@ html {
     text-transform: capitalize;
     position: relative;
     transition: color 0.3s ease;
-    font-family: "Lora";
+    font-family: "Satisfy";
 }
 
 .nav-links a::after {
@@ -236,14 +236,24 @@ html {
 
 @media screen and (max-width: 480px) {
     .logo {
-        font-size: 1rem;
-        margin-left: -30px;
+        font-size: 1.2rem;
+        margin-left: 20px; /* 🔹 Margin thoda kam kiya */
+    }
+
+    .nav-links {
+        padding: 5px 0; /* 🔹 Navbar options ke upar-niche ka gap kam kiya */
+    }
+
+    .nav-links li {
+        margin: 45px 0; /* 🔹 Navbar ke options ke beech ka gap reduce */
     }
 
     .nav-links a {
-        font-size: 1rem;
+        font-size: 0.95rem; /* 🔹 Font size thoda adjust kiya */
+        padding: 8px 20px; /* 🔹 Links ke around padding adjust */
     }
 }
+
 
 /* Slide down animation */
 @keyframes slideDown {
@@ -256,45 +266,7 @@ html {
         transform: translateY(0);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.info h1{
-margin-top: 500px;
-position: absolute;
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
 </style>
-
 
 
 
@@ -319,7 +291,7 @@ position: absolute;
 
 <div class="webdev">
     <div class="img-wrapper">
-        <img src="{% static 'Images/Web.png' %}" alt="Banner Image">
+        <img src="{% static 'Images/fffff.png' %}" alt="Banner Image">
     </div>
 
     <div class="content-wrapper">
@@ -332,7 +304,7 @@ position: absolute;
 </div>
 
 <div class="svg-down">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5,90,175)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5,175,161)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 </div>
 
 
@@ -347,7 +319,7 @@ position: absolute;
     padding: 5rem 0;
     margin: 0 auto;
     margin-top: 80px;
-    background: rgb(5,90,175);
+    background: rgb(5, 175, 161);
 }
 
 .img-wrapper {
@@ -388,14 +360,14 @@ color: black;
     margin-bottom: 20px;
     font-size: 100px;
     font-weight: bold;
-    font-family: 'Satisfy', cursive;
+    font-family: 'Satisfy';
     color: white;
 }
 
 .contents p {
     margin-bottom: 20px;
     line-height: 1.5;
-    font-size: 25px;
+    font-size: 22px;
     color: aliceblue;
     width: 800px;
     margin: 0 auto;
@@ -415,7 +387,7 @@ color: black;
 }
 
 .contents a:hover {
-    background-color: rgb(5, 90, 175);
+    background-color: transparent;
     transform: scale(1.10);
     transition: 0.7s ease;
 }
@@ -464,7 +436,8 @@ color: black;
 
 @media (max-width: 480px) {
     .img-wrapper img {
-        max-width: 300px;
+        width: 200px;
+        height:200px;
     }
     .contents h2 {
         font-size: 50px;
@@ -665,7 +638,7 @@ color: black;
 .container .box-container .box{
     box-shadow: 0 10px 10px rgba(0,0,0,.2);
     border-radius: 5px;
-    background: rgb(5,90,175);
+    background: rgb(5, 175, 161);;
     text-align: center;
     padding:70px 50px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -802,7 +775,7 @@ color: black;
 </div>
 
 <div class="SVG-down">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 90, 175)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 161)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 </div>
 
 
@@ -817,7 +790,7 @@ color: black;
     padding: 5rem 0;
     margin: 0 auto;
     margin-top: 90px;
-    background-color:rgb(6, 91, 176);
+    background-color:rgb(6, 175, 161);
     margin-left: 0px;
 }
 
@@ -880,7 +853,7 @@ color: black;
 .content4 p {
     margin-bottom: 20px;
     line-height: 1.5;
-    font-size: 25px;
+    font-size: 22px;
     margin-left: -300px;
     color:white;        
     width: 1000px;
@@ -955,7 +928,8 @@ color: black;
 
 @media (max-width: 480px) {
     .imgWrapper3 img {
-        max-width: 250px;
+        width: 200px;
+        height:200px;
     }
     .content4 h2 {
         font-size: 28px;
@@ -1117,7 +1091,7 @@ color: black;
 .content p {
     margin-bottom: 20px;
     line-height: 1.5;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .content a {
@@ -1177,7 +1151,8 @@ color: black;
 
 @media (max-width: 480px) {
     .imgWrapper img {
-        max-width: 250px;
+        width: 250px;
+        height: 250px;
     }
     .content h2 {
         font-size: 28px;
@@ -1289,7 +1264,7 @@ color: black;
 </div>
 
 <div class="SVG-down">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 90, 175)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 175, 161)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 </div>
 
 
@@ -1304,7 +1279,7 @@ color: black;
     padding: 5rem 0;
     margin: 0 auto;
     margin-top: 90px;
-    background-color: rgb(5, 90, 175);
+    background-color: rgb(6, 175, 161);
     margin-left: 0px;
 }
 
@@ -1439,7 +1414,8 @@ color: black;
 
 @media (max-width: 480px) {
     .imgWrapper3 img {
-        max-width: 250px;
+        width: 250px;
+        height:250px;
     }
     .content4 h2 {
         font-size: 28px;
@@ -1671,7 +1647,8 @@ color: black;
 
 @media (max-width: 480px) {
     .imgWrapper img {
-        max-width: 250px;
+        width: 250px;
+        height:250px;
     }
     .content h2 {
         font-size: 28px;
@@ -1727,7 +1704,7 @@ color: black;
 </div>
 
 <div class="SVG-down">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 90, 175)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(6, 175, 161)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 </div>
 
 
@@ -1742,7 +1719,7 @@ color: black;
     padding: 5rem 0;
     margin: 0 auto;
     margin-top: 90px;
-    background-color: rgb(5, 90, 175);
+    background-color: rgb(5, 175, 161);
     margin-left: 0px;
 }
 
@@ -1878,7 +1855,8 @@ color: black;
 
 @media (max-width: 480px) {
     .imgWrapper3 img {
-        max-width: 250px;
+        width: 250px;
+        height:250px;
     }
     .content4 h2 {
         font-size: 28px;
@@ -2063,8 +2041,9 @@ color: black;
 }
 
 @media (max-width: 480px) {
-    .imgWrapper img {
-        max-width: 250px;
+    .WebDev img {
+        width: 250px;
+        height:250px;
     }
     .content h2 {
         font-size: 28px;
@@ -2116,7 +2095,7 @@ color: black;
 </div>
 
 <div class="SVG-down">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 90, 175)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(6, 175, 161)" fill-opacity="1" d="M0,288L48,250.7C96,213,192,139,288,96C384,53,480,43,576,53.3C672,64,768,96,864,128C960,160,1056,192,1152,202.7C1248,213,1344,203,1392,197.3L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 </div>
 
 
@@ -2131,7 +2110,7 @@ color: black;
     padding: 5rem 0;
     margin: 0 auto;
     margin-top: 90px;
-    background-color: rgb(5, 90, 175);
+    background-color: rgb(5, 175, 161);
     margin-left: 0px;
 }
 
@@ -2267,7 +2246,8 @@ color: black;
 
 @media (max-width: 480px) {
     .imgWrapper3 img {
-        max-width: 250px;
+        width: 250px;
+        height:250px;
     }
     .content4 h2 {
         font-size: 28px;
@@ -2518,7 +2498,7 @@ color: black;
 }
 
 .content a:hover {
-    background-color: rgb(5, 90, 175);
+    background-color: rgb(5, 175, 161);
     transform: scale(1.10);
     transition: 0.7s ease;
     color: #fff;
@@ -2596,240 +2576,160 @@ color: black;
 
 
 
-<div class="Footer-Svg">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgb(5, 90, 175   )" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,170.7C672,213,768,267,864,256C960,245,1056,171,1152,154.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
+
+<div class="Footer-Svg">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="rgb(5, 175, 161)" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,170.7C672,213,768,267,864,256C960,245,1056,171,1152,154.7C1248,139,1344,181,1392,202.7L1440,224L1440,320L0,320Z"></path>
+    </svg>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <footer>
-    <div class="footer-col about">
-        <h4>About us</h4>
-        <p style="color: white;font-size: 20px;">I am a skilled web developer specializing in Python full stack development. With expertise in both front-end and back-end technologies, I create responsive, high-quality web applications tailored to client needs. Let’s collaborate to build exceptional digital solutions together.</p>
-    </div>
-    <div class="footer-col services">
-        <h4 style="margin-left: 120px;">Services</h4>
-        <ul style="margin-left: 120px;">
-            <li><a href="http://127.0.0.1:2000/webd/">Web Devloper</a></li>
-            <li><a href="http://127.0.0.1:2.5em000/App/">Application</a></li>
-            <li><a href="http://127.0.0.1:2000/Ecom/">Ecommerce</a></li>
-            <li><a href="http://127.0.0.1:2000/Hosting/">Hosting & Domain</a></li>
-            <li><a href="http://127.0.0.1:2000/Digital/">Digital Marketing</a></li>
-            <li><a href="http://127.0.0.1:2000/Develop/">Web maintenance</a></li>
-        </ul>
-    </div>
-    <div class="footer-col company">
-        <h4 style="margin-left: 50px;">Company</h4>
-        <ul style="margin-left: 50px;">
-            <li><a href="http://127.0.0.1:2000/About/">About</a></li>
-            <li><a href="http://127.0.0.1:2000/contact/">Legal</a></li>
-            <li><a href="http://127.0.0.1:2000/contact/">Contact us</a></li>
-            <li><a href="http://127.0.0.1:2000/program/">Tutorial</a></li>
-            <li><a href="http://127.0.0.1:2000/Learn/">Programing </a></li>
-       
-       
-        </ul>
-    </div>
-    <div class="footer-col follow">
-        <h4>Follow us</h4>
-        <div class="links">
-            <a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/anveshjain1635/"><i class="fab fa-instagram"></i></a>
+    <div class="footer-container">
+        <div class="footer-col about">
+            <h4>About Us</h4>
+            <p>I specialize in Python full stack development, crafting high-quality web applications tailored to client needs.</p>
+            <a href="http://127.0.0.1:2000/home/">
+                <img class="footer-logo" src="{% static 'Images/stec.png' %}" alt="STECH Logo">
+            </a>
         </div>
-    </div>
-    <div class="line">
-        <p style="font-size: 20px;color:white;">Copyright © 2024 Codestation. All Rights Reserved.</p>
+
+        <div class="footer-col services">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Web Development</a></li>
+                <li><a href="#">Application</a></li>
+                <li><a href="#">Ecommerce</a></li>
+                <li><a href="#">Hosting & Domain</a></li>
+                <li><a href="#">Digital Marketing</a></li>
+                <li><a href="#">Web Maintenance</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col company">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="#">Programming</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col follow">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/anvesh-jain-22875b264/" target="_blank" class="fab fa-linkedin"></a>
+                <a href="https://www.facebook.com/yourprofile" class="fab fa-facebook" target="_blank"></a>
+                <a href="https://twitter.com/yourprofile" class="fab fa-twitter" target="_blank"></a>
+                <a href="https://www.instagram.com/stechweb56/" class="fab fa-instagram" target="_blank"></a>
+           
+            </div>
+        </div>
+        
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 StechWeb. All Rights Reserved.</p>
     </div>
 </footer>
 
 <style>
-footer {
-    display: flex;
-    flex-wrap: wrap;
-    background-color:rgb(5, 90, 175);
-    padding: 40px 5%;
-    color: black;
-    margin-top:00px;
-}
-
-.footer-col {
-    flex: 1;
-    min-width: 200px;
-    margin-bottom: 20px;
-}
-
-.footer-col h4 {
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 23px;
-    color: rgb(156, 47, 14);
-    text-transform: capitalize;
-    position: relative;
-
-
-}
-
-.footer-col p{
-color: white;
-
-}
-.footer-col h4::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    background-color:green;
-    height: 2px;
-    width: 90px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 8px;
-}
-
-ul li a {
-    display: block;
-    font-size: 23px;
-    text-transform: capitalize;
-    color: white;
-    text-decoration: none;
-    transition: 0.4s;
-    font-family: "Lora";
-}
-
-ul li a:hover {
-    color: Orange;
-    padding-left: 2px;
-}
-
-.links a {
-    display: inline-block;
-    height: 50px;
-    width: 45px;
-    color: black;
-    background-color: rgba(40, 130, 214, 0.8);
-    margin: 0 10px 10px 0;
-    text-align: center;
-    line-height: 44px;
-    border-radius: 50%;
-    transition: 0.4s;
-}
-
-.links a:hover {
-    color: white;
-    background-color: Orange;
-}
-
-.line {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 20px;
-}
-
-
-
-
-@media (max-width: 740px) {
-    .footer-col {
-        width: 100%;
+    footer {
+        background-color: rgb(5, 175, 161);
+        color: white;
+        padding: 40px 5%;
         text-align: center;
     }
 
-    .footer-col h4::before {
-        display: none;
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
     }
-}
 
-@media (max-width: 555px) {
-    footer {
-        padding: 20px 2%;
+    .footer-col {
+        flex: 1;
+        min-width: 200px;
     }
 
     .footer-col h4 {
-        font-size: 20px;
-        margin-left: -30px;
-    }
-    .footer-col p{
-       font-size: 10px; 
-       margin-left: 20px;     
+        margin-bottom: 15px;
+        font-size: 22px;
+        color: orange;
+        position: relative;
     }
 
-    ul li a {
-        font-size: 15px;
+    .footer-col h4::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: white;
+        margin: 5px auto;
     }
 
-    .line {
-        font-size: 12px;
-    
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
     }
-}
 
+    .footer-col ul li {
+        margin: 8px 0;
+    }
 
+    .footer-col ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
 
+    .footer-col ul li a:hover {
+        color: orange;
+    }
+
+    .social-links a {
+        display: inline-block;
+        font-size: 22px;
+        color: white;
+        background: rgba(255, 255, 255, 0.2);
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        margin: 5px;
+        transition: background 0.3s;
+    }
+
+    .social-links a:hover {
+        background: orange;
+    }
+
+    .footer-bottom {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .footer-logo {
+        width: 100px;
+        height: auto;
+        margin-top: 15px;
+        display: block;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+        .footer-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            width: 100px;
+        }
+    }
 </style>
-
-
-
-
-<script>
-    // Set Alertify notifier position
-    alertify.set('notifier', 'position', 'top-right');
-
-    // Loop through messages and display them using Alertify
-    {% for msg in messages %}
-        alertify.success('{{ msg }}');
-    {% endfor %}
-</script>
-
-<style>
-    /* Style for Alertify notifications */
-    .ajs-message.ajs-success {
-    border-radius: 50px; /* Add border-radius */
-    /* Add border */
-    background-color: red; /* Change background color to red */
-    color: black; /* Change text color to white */
-    padding: 10px; /* Add padding */
-    margin-bottom: 10px; /* Add margin bottom */
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif;    
-
-}
-</style>
-</body>
-</html>

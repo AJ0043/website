@@ -68,7 +68,7 @@
         }
     </script>
 <div class="Banner2">
-    <img src="{% static 'Images/Fff.webp' %}">
+    <img src="{% static 'Images/Domain.webp' %}">
     <h2>.</h2>
     
     
@@ -236,14 +236,24 @@
     
     @media screen and (max-width: 480px) {
         .logo {
-            font-size: 1rem;
-            margin-left: -30px;
+            font-size: 1.2rem;
+            margin-left: 20px; /* 🔹 Margin thoda kam kiya */
+        }
+    
+        .nav-links {
+            padding: 5px 0; /* 🔹 Navbar options ke upar-niche ka gap kam kiya */
+        }
+    
+        .nav-links li {
+            margin: 45px 0; /* 🔹 Navbar ke options ke beech ka gap reduce */
         }
     
         .nav-links a {
-            font-size: 1rem;
+            font-size: 0.95rem; /* 🔹 Font size thoda adjust kiya */
+            padding: 8px 20px; /* 🔹 Links ke around padding adjust */
         }
     }
+    
     
     /* Slide down animation */
     @keyframes slideDown {
@@ -422,6 +432,7 @@
         height: 750px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         user-select: none;
+        margin-top:80px;
     
     }
     .Banner2 h1 {

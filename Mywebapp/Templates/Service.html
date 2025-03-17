@@ -374,18 +374,20 @@ function toggleMenu() {
 /* Wrapper for Cards */
 /* Wrapper for Cards */
 /* Wrapper for Cards */
+/* Wrapper for Cards */
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Ensure 4 cards per row */
-    gap: 70px; /* Space between cards */
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 cards per row */
+    gap: 70px;
     padding: 20px;
     justify-content: center;
-    max-width: 1800px; /* Increased overall width */
-    margin: 50px auto; /* Center alignment */
+    max-width: 1800px;
+    margin: 50px auto;
 }
+
 /* Card Styles */
 .card {
-    width: 300px; /* Set a wider fixed width for cards */
+    width: 300px;
     background: black;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -398,8 +400,8 @@ function toggleMenu() {
 }
 
 .card:hover {
-    transform: translateY(-20px); /* Lift on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+    transform: translateY(-20px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: 0.5s ease;
 }
 
@@ -424,7 +426,7 @@ function toggleMenu() {
     font-size: 1rem;
     color: white;
     line-height: 1.5;
-    font-family:Sans-sarif;
+    font-family: Sans-serif;
 }
 
 .card a {
@@ -436,30 +438,40 @@ function toggleMenu() {
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s ease, transform 0.3s ease;
-    font-family:serif;
+    font-family: serif;
 }
 
 .card a:hover {
     background: orange;
-    transform: scale(1.05); /* Slight enlarge on hover */
+    transform: scale(1.05);
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .wrapper {
-        grid-template-columns: repeat(3, 1fr); /* 3 cards per row for tablets */
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row for large tablets */
+    }
+}
+
+@media (max-width: 992px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets */
     }
 }
 
 @media (max-width: 768px) {
     .wrapper {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for smaller devices */
+        grid-template-columns: repeat(2, 1fr); /* Ensuring 2 cards per row for small tablets */
+        gap: 40px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .wrapper {
         grid-template-columns: repeat(1, 1fr); /* 1 card per row for mobile devices */
+    }
+    .card {
+        width: 90%; /* Adjusting card width for smaller screens */
     }
     .card h1 {
         font-size: 1.2em;

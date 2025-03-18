@@ -14,6 +14,8 @@ import contextlib
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+from .models import JavaTopic
 
 
 # Create your views here.
@@ -210,28 +212,6 @@ def Dash(request):
 
 
 
-def python_dashboard(request):
-    topics = PythonTopic.objects.all()
-    return render(request, 'dashboard.html', {'topics': topics})
-
-def get_content(request, topic_id):
-    topic = get_object_or_404(PythonTopic, id=topic_id)
-    return JsonResponse({
-        'title': topic.title,
-        'subtitle': topic.subtitle,
-        'content1': topic.content1,
-        'content2': topic.content2,
-        'content3': topic.content3,
-        'content4': topic.content4,
-    })
-
-
-
-
-
-
-
-
 @csrf_exempt  # Disable CSRF protection (use only if necessary)
 def run_code(request):
     if request.method == "POST":
@@ -290,3 +270,26 @@ def get_content(request, topic_id):
         'content3': topic.content3,
         'content4': topic.content4,
     })
+
+
+
+def java_topic_list(request):
+    topics = JavaTopic.objects.all()
+    return render(request, 'java.html', {'topics': topics})
+
+# Java Topic Detail API
+def java_topic_detail(request, topic_id):
+    try:
+        topic = JavaTopic.objects.get(id=topic_id)
+        data = {
+            "title": topic.title,
+            "subtitle1": topic.subtitle1,
+            "content1": topic.content1,
+            "content2": topic.content2,
+            "content3": topic.content3,
+            "content4": topic.content4,
+            "content5": topic.content5,
+        }
+        return JsonResponse(data)
+    except JavaTopic.DoesNotExist:
+        return JsonResponse({"error": "Topic not found"}, status=404)

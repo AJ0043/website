@@ -10,3 +10,16 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.Name
+    
+
+
+class PythonTopic(models.Model):
+    title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=150, null=True, blank=True)  # Allow NULL values
+    content1 = models.TextField()
+    content2 = models.TextField(null=True, blank=True)
+    content3 = models.TextField(null=True, blank=True)
+    content4 = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.title

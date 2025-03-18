@@ -5,6 +5,16 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from Mywebapp.models import Contact
+from django.shortcuts import render
+from django.http import JsonResponse
+from .models import PythonTopic
+import json
+import io
+import contextlib
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render, get_object_or_404
+
 
 # Create your views here.
 
@@ -191,3 +201,92 @@ def Send(request):
 def already(request):
     return render(request,'already.html')
 
+
+
+
+######## Dashboard $$$$$$$##########
+def Dash(request):
+    return render(request,'DASH1.html')
+
+
+
+def python_dashboard(request):
+    topics = PythonTopic.objects.all()
+    return render(request, 'dashboard.html', {'topics': topics})
+
+def get_content(request, topic_id):
+    topic = get_object_or_404(PythonTopic, id=topic_id)
+    return JsonResponse({
+        'title': topic.title,
+        'subtitle': topic.subtitle,
+        'content1': topic.content1,
+        'content2': topic.content2,
+        'content3': topic.content3,
+        'content4': topic.content4,
+    })
+
+
+
+
+
+
+
+
+@csrf_exempt  # Disable CSRF protection (use only if necessary)
+def run_code(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            code = data.get("code", "")
+
+            if not code.strip():
+                return JsonResponse({"output": "Error: No code provided."})
+
+            # Redirect stdout and stderr to capture output/errors
+            output_buffer = io.StringIO()
+            error_buffer = io.StringIO()
+            
+            try:
+                with contextlib.redirect_stdout(output_buffer), contextlib.redirect_stderr(error_buffer):
+                    exec(code, {"__builtins__": {"print": print}}, {})  # Allow print()
+
+                output = output_buffer.getvalue()
+                error_output = error_buffer.getvalue()
+
+                return JsonResponse({"output": output if output.strip() else error_output.strip()})
+
+            except Exception as e:
+                print(f"Execution Error: {str(e)}")  # Log error in Django console
+                return JsonResponse({"output": f"Runtime Error: {str(e)}"})
+
+        except json.JSONDecodeError:
+            return JsonResponse({"output": "Error: Invalid JSON format."})
+
+        except Exception as e:
+            print(f"Server Error: {str(e)}")  # Log error in Django console
+            return JsonResponse({"output": f"Error: {str(e)}"})
+
+    return JsonResponse({"output": "Invalid request method. Use POST."})
+
+
+
+
+
+############## Dashbord $########
+
+
+def python_dashboard(request):
+    topics = PythonTopic.objects.all()
+    return render(request, 'dashboard.html', {'topics': topics})
+
+
+def get_content(request, topic_id):
+    topic = get_object_or_404(PythonTopic, id=topic_id)
+    return JsonResponse({
+        'title': topic.title,
+        'subtitle': topic.subtitle,
+        'content1': topic.content1,
+        'content2': topic.content2,
+        'content3': topic.content3,
+        'content4': topic.content4,
+    })

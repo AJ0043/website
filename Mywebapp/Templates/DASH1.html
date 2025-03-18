@@ -1,0 +1,294 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/Custom.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>    
+    <link rel="icon" href="{% static 'Images/stec.png' %}" type="image/x-icon">
+    <title>{% block title %}STECH Web Development{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo"><img src="{% static 'Images/Stec.png' %}" alt="Banner Image"></div>
+        <ul class="nav-links">
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/Service/">Services</a></li>
+            <li><a href="/program/">Tutorial</a></li>
+            <li><a href="/About/">About</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/Login1/" class="login">LOGIN</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+<script>
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+}
+</script>
+
+<style>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(6, 175, 161);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    font-family: 'Lora', serif;
+}
+.logo img {
+    width: 70px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 150px;
+    margin-top:-10px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+    transition: transform 0.5s ease-in-out;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Satisfy', cursive;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+    font-size: 25px;
+}
+.nav-links a:hover {
+    color: yellow;
+}
+.login {
+    color: orange !important;
+    font-size: 1.4rem;
+}
+.nav-links.active {
+    transform: translateX(0);
+}
+.burger {
+    display: none;
+    cursor: pointer;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 80px;
+        gap:3rem;
+        background: rgba(5, 175, 161, 0.9);
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+    .burger {
+        display: block;
+    }
+    .nav-links a {
+        font-size: 2rem;
+    }
+}
+</style>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Course Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background:rgb(10, 96, 89);
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+            overflow-y: auto;
+            margin-top:80px;
+            font-family: Serif;
+            
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #34495e;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        
+        
+        .sidebar a:hover {
+            background:rgb(188, 174, 80);
+            border-radius:20px; 
+            margin-left:-10px;
+            
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            flex-grow: 1;
+            margin-top:80px;
+            font-family:Serif;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+            .content {
+                margin-left: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Python Course</h2>
+        <a href="#" onclick="loadContent('intro')">Introduction</a>
+        <a href="#" onclick="loadContent('variables')">Python Variables</a>
+        <a href="#" onclick="loadContent('datatypes')">Data Types & Operators</a>
+        <a href="#" onclick="loadContent('lists')">Python Lists</a>
+        <a href="#" onclick="loadContent('tuples')">Python Tuples</a>
+        <a href="#" onclick="loadContent('sets')">Python Sets</a>
+        <a href="#" onclick="loadContent('dicts')">Python Dictionaries</a>
+        <a href="#" onclick="loadContent('loops')">Python Loops</a>
+        <a href="#" onclick="loadContent('functions')">Python Functions</a>
+        <a href="#" onclick="loadContent('oops')">Python OOPs</a>
+        <a href="#" onclick="loadContent('filehandling')">File Handling</a>
+    </div>
+    <div class="content" id="mainContent">
+        <h2>Welcome to Python Course</h2>
+        <p>Select a topic from the sidebar to begin learning.</p>
+    </div>
+    <script>
+        function loadContent(topic) {
+            const content = {
+                'intro': '<h2>Introduction to Python</h2><p>Python is a powerful programming language...</p>',
+                'variables': '<h2>Python Variables</h2><p>Variables are used to store data...</p>',
+                'datatypes': '<h2>Data Types & Operators</h2><p>Python provides several built-in data types...</p>',
+                'lists': '<h2>Python Lists</h2><p>Lists are used to store multiple items in a single variable...</p>',
+                'tuples': '<h2>Python Tuples</h2><p>Tuples are immutable sequences...</p>',
+                'sets': '<h2>Python Sets</h2><p>Sets are used to store unique items...</p>',
+                'dicts': '<h2>Python Dictionaries</h2><p>Dictionaries store data in key-value pairs...</p>',
+                'loops': '<h2>Python Loops</h2><p>Loops help in repeating a block of code...</p>',
+                'functions': '<h2>Python Functions</h2><p>Functions allow code reuse...</p>',
+                'oops': '<h2>Python OOPs</h2><p>Object-Oriented Programming in Python...</p>',
+                'filehandling': '<h2>File Handling</h2><p>Python provides built-in methods to work with files...</p>'
+            };
+            document.getElementById('mainContent').innerHTML = content[topic] || '<h2>Content not found</h2>';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

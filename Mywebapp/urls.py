@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views 
+from django.urls import path
+from .views import python_dashboard, get_content
 urlpatterns = [
     path('home/', views.Home, name="home"),
     path('Service/', views.Service, name="Service"),
@@ -31,7 +33,12 @@ urlpatterns = [
     path('SendMessage/', views.Send, name='success'),
     path('already/', views.already, name='log'),
     path('project/', views.Project, name='project'),
-
-
-
+    
+    
+    ######## Dash ############ Board ########
+     path('DASH1/', views.Dash, name='Dashboard'),
+     path('Dashborad/', python_dashboard, name='dashboard'),
+    path('get-content/<int:topic_id>/', get_content, name='get_content'),
 ]
+     
+

@@ -43,7 +43,7 @@ urlpatterns = [
      path('get-content/<int:topic_id>/', get_content, name='get_content'),
     path('java-topics/', java_topic_list, name='java_topic_list'),
     path('java-topics/<int:topic_id>/', java_topic_detail, name='java_topic_detail'),
-
+    
 ]
      
 

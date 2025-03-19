@@ -17,8 +17,9 @@
 </head>
 <body>
     <nav class="navbar" id="navbar">
-        <div class="logo"><img src="{% static 'Images/Stec.png' %}" alt="Banner Image"></div>
-        <ul class="nav-links">
+        <a class="logo" href="/home/">
+            <img src="{% static 'Images/Stec.png' %}" alt="Banner Image">
+        </a>  <ul class="nav-links">
             <li><a href="/home/">Home</a></li>
             <li><a href="/Service/">Services</a></li>
             <li><a href="/program/">Tutorial</a></li>
@@ -311,7 +312,7 @@ function toggleMenu() {
     .card h3 {
         margin: 10px 0;
         font-size: 1.5em;
-        color:White
+        color:White;
         font-family: 'Satisfy', cursive;
     }
     

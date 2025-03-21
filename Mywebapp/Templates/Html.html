@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="{% static 'Images/stec.png' %}" type="image/x-icon">
+    <title>{% block title %}STECH Web Development{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+
+        /* Navbar */
+        .navbar {
+            background: rgb(6, 175, 161);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 85px;
+        }
+        .navbar .logo img {
+            width: 70px;
+            height: 60px;
+            border-radius: 10px;
+        }
+        .menu-toggle {
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            display: none;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 3.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: 'Satisfy', cursive;
+        }
+        .nav-links a:hover { color: yellow; }
+        .login { color: orange !important; font-size: 1.2rem; }
+
+        /* Sidebar */
+        .sidebar {
+            width: 270px;
+            background: rgb(10, 96, 89);
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+            top: 85px;
+            left: 0;
+            transition: left 0.3s;
+            z-index: 999;
+            overflow-y: auto;
+            max-height: calc(100vh - 80px);
+            font-family: Serif;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(23, 127, 118, 0.3);
+        }
+        .sidebar a:hover { background: rgba(255, 255, 255, 0.2); }
+
+        /* Sidebar Toggle Button (Hidden on Large Screens) */
+        #sidebarToggle {
+            display: none;
+            position: fixed;
+            left: 20px;
+            top: 100px;
+            z-index: 1001;
+            background: rgba(17, 161, 156, 0.8);
+            width: 50px;
+            height: 50px;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Content */
+        .content {
+            margin-top: 85px;
+            padding: 20px;
+            transition: margin-left 0.3s;
+            font-family: Serif;
+            background: black;
+            color: white;
+            border: ridge 1px white;
+            border-radius: 2px;
+            margin-left: 270px;
+            border-color: Orange;
+        }
+        .content h2 { color: cyan; }
+        .content p { color: white; font-size: 18px; }
+
+        /* Responsive */
+        @media screen and (max-width: 1024px) {
+            .menu-toggle { display: block; }
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                right: 0;
+                background: rgba(5, 175, 161, 0.9);
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+                display: none;
+            }
+            .nav-links.active { display: flex; }
+            
+            /* Hide sidebar on small screens */
+            .sidebar { left: -270px; }
+            .content { margin-left: 0; }
+
+            /* Show sidebar toggle button */
+            #sidebarToggle { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <button class="menu-toggle" onclick="toggleNavbar()">☰</button>
+        <div class="logo"><img src="{% static 'Images/Stec.png' %}" alt="Logo"></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/home/">Home</a></li>
+            <li><a href="/Service/">Services</a></li>
+            <li><a href="/program/">Tutorial</a></li>
+            <li><a href="/About/">About</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/Login1/" class="login">LOGIN</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sidebar Toggle Button (Mobile View) -->
+    <button id="sidebarToggle">☰</button>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2>HTML Topics</h2>
+        {% for topic in topics %}
+        <a href="#" data-id="{{ topic.id }}">{{ topic.title }}</a>
+        {% endfor %}
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="mainContent">
+        <h2>Welcome to HTML Course</h2>
+        <p>Select a topic from the sidebar to begin learning.</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 🌟 Navbar Toggle (Mobile)
+        function toggleNavbar() {
+            let navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+
+        // 🌟 Sidebar Toggle (Manually Open/Close)
+        function toggleSidebar() {
+            let sidebar = document.getElementById("sidebar");
+            let content = document.getElementById("mainContent");
+
+            if (sidebar.style.left === "0px") {
+                sidebar.style.left = "-270px";
+                content.style.marginLeft = "0";
+            } else {
+                sidebar.style.left = "0px";
+                content.style.marginLeft = "270px";
+            }
+        }
+
+        document.getElementById("sidebarToggle").addEventListener("click", toggleSidebar);
+
+        // 🌟 Load Content & Auto Close Sidebar in Mobile View
+        function loadHTMLContent(topicId) {
+            fetch(`/get-html-content/${topicId}/`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("mainContent").innerHTML = `
+                        <h2 style="font-size: 2.5rem; color: cyan;">${data.title}</h2>
+                        ${data.HTML1 ? `<h3 style="font-size: 2rem; color: orange;">${data.HTML1.replace(/\n/g, '<br>')}</h3>` : ""}
+                        ${data.HTML2 ? `<h1 style="font-size: 1.2rem; color: lightblue;">${data.HTML2.replace(/\n/g, '<br>')}</h1>` : ""}
+                        ${data.HTML3 ? `<h2 style="font-size: 1.2rem; color: yellow;">${data.HTML3.replace(/\n/g, '<br>')}</h2>` : ""}
+                        ${data.HTML4 ? `<h3 style="font-size: 1.3rem; color: lightgreen;">${data.HTML4.replace(/\n/g, '<br>')}</h3>` : ""}
+                        ${data.HTML5 ? `<h3 style="font-size: 1.2rem; color: pink;">${data.HTML5.replace(/\n/g, '<br>')}</h3>` : ""}
+                        ${data.HTML6 ? `<h3 style="font-size: 1.2rem; color: red;">${data.HTML6.replace(/\n/g, '<br>')}</h3>` : ""}
+                    `;
+        
+                    if (window.innerWidth <= 1024) {  
+                        document.getElementById("sidebar").style.left = "-270px";
+                        document.getElementById("mainContent").style.marginLeft = "0";
+                    }
+                });
+        }
+        
+
+        document.querySelectorAll(".sidebar a").forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                loadHTMLContent(this.getAttribute("data-id"));
+            });
+        });
+    </script>
+</body>
+</html>

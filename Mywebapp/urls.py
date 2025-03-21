@@ -2,7 +2,7 @@ from django.urls import path
 from . import views 
 from django.urls import path
 from .views import python_dashboard, get_content
-from .views import java_topic_list, java_topic_detail
+from .views import java_topic_list, java_topic_detail ,HTML_topic_detail ,HTML_topic_list
 
 urlpatterns = [
     path('home/', views.Home, name="home"),
@@ -41,9 +41,11 @@ urlpatterns = [
      path('DASH1/', views.Dash, name='Dashboard'),
      path('Dashborad/', python_dashboard, name='dashboard'),
      path('get-content/<int:topic_id>/', get_content, name='get_content'),
-    path('java-topics/', java_topic_list, name='java_topic_list'),
-    path('java-topics/<int:topic_id>/', java_topic_detail, name='java_topic_detail'),
-    
+     path('java-topics/', java_topic_list, name='java_topic_list'),
+     path('java-topics/<int:topic_id>/', java_topic_detail, name='java_topic_detail'),
+    path('html-topics/', HTML_topic_list, name='html_topics'),
+   path('get-html-content/<int:topic_id>/', HTML_topic_detail, name='html_topic_detail'),
+
 ]
      
 

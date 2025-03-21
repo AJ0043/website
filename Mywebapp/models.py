@@ -42,3 +42,16 @@ class JavaTopic(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class HTMLTopic(models.Model):
+    title = models.CharField(max_length=200)
+    HTML1 = models.CharField(max_length=200, blank=True, null=True)
+    HTML2 = models.TextField(blank=True, null=True,max_length=1200)
+    HTML3 = models.TextField(blank=True, null=True,max_length=1200)
+    HTML4 = models.TextField(blank=True, null=True,max_length=1200)
+    HTML5 = models.TextField(blank=True, null=True,max_length=1200)
+    HTML6 = models.TextField(blank=True, null=True,max_length=1200)
+
+    def __str__(self):
+        return self.title

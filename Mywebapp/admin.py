@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PythonTopic,JavaTopic
+from .models import PythonTopic,JavaTopic,HTMLTopic
 # Register your models here.
 from .models import Contact
 
@@ -11,3 +11,4 @@ class ContactAdmin(admin.ModelAdmin):
 
 admin.site.register(PythonTopic)
 admin.site.register(JavaTopic)
+admin.site.register(HTMLTopic)

@@ -7,7 +7,7 @@ from django.contrib import messages
 from Mywebapp.models import Contact
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import PythonTopic
+from .models import PythonTopic,HTMLTopic
 import json
 import io
 import contextlib
@@ -293,3 +293,28 @@ def java_topic_detail(request, topic_id):
         return JsonResponse(data)
     except JavaTopic.DoesNotExist:
         return JsonResponse({"error": "Topic not found"}, status=404)
+
+
+
+
+
+
+
+# Fetch all HTML topics and render them in the template
+def HTML_topic_list(request):
+    topics = HTMLTopic.objects.all()
+    return render(request, 'HTML.html', {'topics': topics})
+
+
+def HTML_topic_detail(request, topic_id):
+    topic = get_object_or_404(HTMLTopic, id=topic_id)
+    data = {
+        "title": topic.title,
+        "HTML1": topic.HTML1,
+        "HTML2": topic.HTML2,
+        "HTML3": topic.HTML3,
+        "HTML4": topic.HTML4,
+        "HTML5": topic.HTML5,
+        "HTML6": topic.HTML6,
+    }
+    return JsonResponse(data)
